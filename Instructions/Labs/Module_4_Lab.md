@@ -103,7 +103,7 @@ The main tasks for this exercise are as follows:
    az provider register --namespace 'Microsoft.Insights'
    ```
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301suba.json** into the Cloud Shell home directory.
+1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301suba.json** into the Cloud Shell home directory.(**Note:- this is how you can upload files from your local machine to cloud shell pane, please skip this step for now**)
 
 1. From the Cloud Shell pane, the following command is used to create a resource group (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer): (**Note:- just go through the command, as the resource groups are pre-created**)
 
@@ -265,13 +265,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Deploy highly available Azure VMs into availability zones behind an Azure Load Balancer Standard by using Azure Resource Manager templates
 
-1. If needed, in the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
-
-1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
-
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301subb.json** into the Cloud Shell home directory.
-
-1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that is available in your subscription and which is closest to the location of your lab computer):
+1. From the Cloud Shell pane, the following command is used to create a resource group (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer): (**Note:- just go through the command, as the resource groups are pre-created**)
 
    ```sh
    LOCATION='<Azure region>'
@@ -472,13 +466,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Deploy a highly available Azure VM Scale Set into availability zones behind an Azure Application Gateway by using Azure Resource Manager templates
 
-1. If needed, in the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
-
-1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
-
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301subc.json** into the Cloud Shell home directory.
-
-1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that is available in your subscription and which is closest to the location of your lab computer):
+1. From the Cloud Shell pane, the following command is used to create a resource group (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer): (**Note:- just go through the command, as the resource groups are pre-created**)
 
    ```sh
    az deployment sub create --location '<Azure region>' --template-file azuredeploy30301subc.json --parameters rgName=az30301c-labRG rgLocation='<Azure region>'
