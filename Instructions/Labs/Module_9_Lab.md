@@ -32,9 +32,9 @@ After completing this lab, you will be able to:
 
 Windows Server admin credentials
 
--  User Name: **Student**
+-  User Name: **azureuser**
 
--  Password: **Pa55w.rd1234**
+-  Password: **Password.!!1**
 
 Estimated Time: 120 minutes
 
