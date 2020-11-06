@@ -27,17 +27,7 @@ After completing this lab, you will be able to:
 
 -  Perform unplanned failover
 
-
-## Lab Environment
-
-Windows Server admin credentials
-
--  User Name: **azureuser**
-
--  Password: **Password.!!1**
-
 Estimated Time: 120 minutes
-
 
 ## Lab Files
 
@@ -61,11 +51,13 @@ The main tasks for this exercise are as follows:
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**.
+    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show Advanced Settings**.
 
    ![](Images/Ex0_task1_step1.png)
    
    ![](Images/Ex0_task1_step1_1.png)
+   
+   **While selecting the resource group please select AZ30307C-LABRG-DEPLOYMENTID**
    
    ![](Images/Ex0_task1_step1_2.png)
 
