@@ -224,7 +224,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30311a-labRG - Access Control (IAM)** blade, select **+ Add** and select the **Add role assignment** option.
 
-  ![](Images/az303-07-03.png)
+    ![](Images/az303-07-03.png)
 
 1. On the **Add role assignment** blade, specify the following settings (leave others with their existing values) and select **Save**:
 
@@ -234,7 +234,7 @@ The main tasks for this exercise are as follows:
     | Assign access to | **Azure AD user, group, or service principal** |
     | Select | **aduserDeployment-id** |
 
-  ![](Images/az303-07-04.png)
+    ![](Images/az303-07-04.png)
 
     > **Note**: Make sure you replace the value of Deployment-id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
       
