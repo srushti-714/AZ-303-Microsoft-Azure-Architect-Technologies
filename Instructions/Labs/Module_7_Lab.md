@@ -66,7 +66,7 @@ The main tasks for this exercise are as follows:
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
+    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, click on Show advanced settings and select existing Resource Group as **az30311a-labRG** and enter unique names for **storage account name** and **File Share** and select **Create storage**. 
 
 1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\azuredeploy30311rga.json** into the Cloud Shell home directory.
 
