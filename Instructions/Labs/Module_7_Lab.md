@@ -118,13 +118,17 @@ The main tasks for this exercise are as follows:
    $passwordProfile.ForceChangePasswordNextLogin = $false
    New-AzureADUser -AccountEnabled $true -DisplayName 'aduserDeployment-id' -PasswordProfile $passwordProfile -MailNickName 'aduserDeployment-id' -UserPrincipalName "aduserDeployment-id@$domainName"
    ```
+   
+   ![](Images/az303-07-01.png)
+   
     > **Note**: Make sure you replace the value of Deployment-id. You can find value of Deployment-id the in the Environment Details tab
 1. From the Cloud Shell pane, run the following to identify the user principal name of the newly created Azure AD user:
 
    ```powershell
    (Get-AzureADUser -Filter "MailNickName eq 'aduserDeployment-id'").UserPrincipalName
    ```
-
+      ![](Images/az303-07-02.png)
+    
     > **Note**: Make sure you replace the value of Deployment-id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
 
 1. Close the Cloud Shell pane.
