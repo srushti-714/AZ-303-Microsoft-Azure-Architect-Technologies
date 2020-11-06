@@ -88,7 +88,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30307a-labRG** |
+    | Resource group | **az30307a-labRG-deploymentID** |
     | Host Public IP Address Name | **az30307a-hv-vm-pip** |
     | Virtual Network Name | **az30307a-hv-vnet** |
     | Host Network Interface1Name | **az30307a-hv-vm-nic1** |
