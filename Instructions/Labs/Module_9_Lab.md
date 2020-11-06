@@ -45,42 +45,6 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Deploy an Azure VM by using an Azure Resource Manager QuickStart template
 
-1. From your lab computer, start a web browser, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
-
-1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
-
-    ![](Images/lab9/Ex0_task1_step1.png)
-
-1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
-
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show Advanced Settings**.
-
-   ![](Images/lab9/Ex0_task1_step1_1.png)
-   
-   1. **While selecting the resource group please select AZ30307C-LABRG-DEPLOYMENTID**
-   
-   ![](Images/lab9/Ex0_task1_step1_2.png)
-
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\\07\\azuredeploy30307suba.json** into the Cloud Shell home directory.
-
-    ![](Images/lab9/Ex0_task1_step3.png)
-
-1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer):
-
-   ```powershell
-   $location = '<Azure region>'
-   New-AzSubscriptionDeployment `
-     -Location $location `
-     -Name az30307subaDeployment `
-     -TemplateFile $HOME/azuredeploy30307suba.json `
-     -rgLocation $location `
-     -rgName 'az30307a-labRG'
-   ```
-
-      > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
-
-1. In the Azure portal, close the **Cloud Shell** pane.
-
 1. From your lab computer, open another browser tab, navigate to the [301-nested-vms-in-virtual-network Azure QuickStart template](https://github.com/Azure/azure-quickstart-templates/tree/master/301-nested-vms-in-virtual-network) or copy this link(https://github.com/Azure/azure-quickstart-templates/tree/master/301-nested-vms-in-virtual-network) and select **Deploy to Azure**. This will automatically redirect the browser to the **Hyper-V Host Virtual Machine with nested VMs** blade in the Azure portal.
 
 1. On the **Hyper-V Host Virtual Machine with nested VMs** blade in the Azure portal, specify the following settings (leave others with their default values):
@@ -354,16 +318,6 @@ The main tasks for this exercise are as follows:
 1. On the **az30307b-rsvault | Site Recovery** blade, select **Prepare infrastructure** Under Hyper-V's to Azure. 
 
     ![](Images/lab9/Ex2_task2_step2.png)
-
-1. On the **Protection goal** blade, select the following settings (leave others with their default values) and select **OK**:
-
-    | Setting | Value | 
-    | --- | --- |
-    | Where are your machines located | **On-premises** |
-    | Where do you want to replicate your machines to | **Azure** |
-    | Are you performing a migration? | **No** |
-    | Are your virtual machines virtualized | **Yes, with Hyper-V** |
-    | Are you using System Center VMM to manage your Hyper-V hosts? | **No** |
 
 1. On the **Deployment planning** blade, in the drop-down list labeled **Have you completed deployment planning?**, select **Yes, I have done it** and select **OK**:
 
