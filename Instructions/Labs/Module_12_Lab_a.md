@@ -210,7 +210,7 @@ The main tasks for this exercise are as follows:
    ```html
    <h1>Azure App Service - Sample Static HTML Site v1.0.1</h1>
    ```
-       ![](Images/lab9/az30301.jpg)
+    ![](Images/lab9/az30301.jpg)
 
 1. Save the changes and close the editor window. 
 
