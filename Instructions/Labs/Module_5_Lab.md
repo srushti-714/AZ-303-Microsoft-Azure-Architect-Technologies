@@ -58,17 +58,19 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
+    ![](Images/lab9/Ex0_task1_step1.png)
+
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**.
 
-    ![](Images/Ex0_task1_step1.png)
+    ![](Images/lab9/Ex0_task1_step1_1.png)
     
-    ![](Images/Ex0_task1_step1_1.png)
-    
-    ![](Images/Ex0_task1_step1_2.png)
+    ![](Images/lab9/Ex0_task1_step1_2.png)
 
 1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AZ303\\AllFiles\Labs\\02\\azuredeploy30302suba.json** into the Cloud Shell home directory.
+
+    ![](Images/lab9/Ex0_task1_step3.png)
 
 1. From the Cloud Shell pane, to create resource groups we can use the following commands (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer): (**Note:- These resource groups will be pre-created in the environment,so please dont run the below command.**)
 
@@ -88,12 +90,12 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\02\azuredeploy30302rga.parameters.json**.
 
-1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab:
+1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab: (**Note:- Dont Forget to change resource group name with the deployment id, Please find it from the environment details tab**)
 
    ```powershell
    New-AzResourceGroupDeployment `
      -Name az30302rgaDeployment `
-     -ResourceGroupName 'az30302a-labRG' `
+     -ResourceGroupName 'az30302a-labRG-deploymentID' `
      -TemplateFile $HOME/azuredeploy30302rga.json `
      -TemplateParameterFile $HOME/azuredeploy30302rga.parameters.json `
      -AsJob
