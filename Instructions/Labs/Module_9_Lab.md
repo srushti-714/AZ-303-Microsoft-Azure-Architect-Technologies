@@ -49,12 +49,12 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
+    ![](Images/lab9/Ex0_task1_step1.png)
+
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show Advanced Settings**.
 
-   ![](Images/lab9/Ex0_task1_step1.png)
-   
    ![](Images/lab9/Ex0_task1_step1_1.png)
    
    1. **While selecting the resource group please select AZ30307C-LABRG-DEPLOYMENTID**
