@@ -34,25 +34,15 @@ After completing this lab, you will be able to:
 
 -  Implement authorization of Azure Storage file shares by leveraging access keys
 
-
-## Lab Environment
-  
-Windows Server admin credentials
-
--  User Name: **Student**
-
--  Password: **Pa55w.rd1234**
-
 Estimated Time: 90 minutes
-
 
 ## Lab Files
 
--  \\\\AZ303\\AllFiles\\Labs\\02\\azuredeploy30302suba.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\\02\\azuredeploy30302suba.json
 
--  \\\\AZ303\\AllFiles\\Labs\\02\\azuredeploy30302rga.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\\02\\azuredeploy30302rga.json
 
--  \\\\AZ303\\AllFiles\\Labs\\02\\azuredeploy30302rga.parameters.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\\02\\azuredeploy30302rga.parameters.json
 
 
 ### Exercise 0: Prepare the lab environment
