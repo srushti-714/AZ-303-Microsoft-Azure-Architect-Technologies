@@ -38,13 +38,13 @@ Estimated Time: 60 minutes
 
 ## Lab Files
 
--  \\\\AZ303\\AllFiles\\Labs\\11\\azuredeploy30311suba.json
+-  C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\azuredeploy30311suba.json
 
--  \\\\AZ303\\AllFiles\\Labs\\11\\azuredeploy30311rga.json
+-  C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\azuredeploy30311rga.json
 
--  \\\\AZ303\\AllFiles\\Labs\\11\\azuredeploy30311rga.parameters.json
+-  C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\azuredeploy30311rga.parameters.json
 
--  \\\\AZ303\\AllFiles\\Labs\\11\\roledefinition30311.json
+-  C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\roledefinition30311.json
 
 
 ## Instructions
@@ -68,25 +68,9 @@ The main tasks for this exercise are as follows:
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\Labs\\11\\azuredeploy30311suba.json** into the Cloud Shell home directory.
+1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\azuredeploy30311rga.json** into the Cloud Shell home directory.
 
-1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer):
-
-   ```powershell
-   $location = '<Azure region>'
-   New-AzSubscriptionDeployment `
-     -Location $location `
-     -Name az30311subaDeployment `
-     -TemplateFile $HOME/azuredeploy30311suba.json `
-     -rgLocation $location `
-     -rgName 'az30311a-labRG'
-   ```
-
-      > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
-
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\Labs\\11\\azuredeploy30311rga.json**.
-
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\\\AZ303\\AllFilesLabs\\11\\azuredeploy30311rga.parameters.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\azuredeploy30311rga.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab:
 
@@ -166,7 +150,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Create a custom RBAC role in an Azure AD tenant
 
-1. On the lab computer, open the file **\\\\AZ303\\AllFiles\\Labs\\11\\roledefinition30311.json** and review its content:
+1. On the lab computer, open the file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\roledefinition30311.json** and review its content:
 
    ```json
    {
@@ -189,7 +173,7 @@ The main tasks for this exercise are as follows:
 
 1. On the lab computer, in the browser window displaying the Azure portal, start a **PowerShell** session within the **Cloud Shell**. 
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\\Labs\\11\\roledefinition30311.json** into the home directory.
+1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\roledefinition30311.json** into the home directory.
 
 1. From the Cloud Shell pane, run the following to replace the `SUBSCRIPTION_ID` placeholder with the ID value of the Azure subscription:
 
@@ -261,31 +245,3 @@ The main tasks for this exercise are as follows:
 
 1. Close the in-private web browser session.
 
-
-#### Task 3: Remove Azure resources deployed in the lab
-
-1. From the lab computer, in the existing browser window displaying the Azure portal, start a PowerShell session within the Cloud Shell pane.
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az30311*'
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az30311*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-1. Close the Cloud Shell pane.
-
-1. In the Azure portal, navigate to the **Users** blade of the Azure Active Directory tenant associated with your Azure subscription.
-
-1. In the list of user accounts, select the entry representing the **az30311aaduser1** user account, select the ellipsis icon in the toolbar, select **Delete user** and select **Yes** when prompted to confirm.  
-
-1. In the Azure portal, navigate to the blade displaying properties of your Azure subscriptions, select the **Access control (IAM)** entry, and then select **Roles**.
-
-1. In the list of roles, select the **Virtual Machine Operator (Custom)** entry, select **Remove** and, when prompted to confirm, select **Yes**.
