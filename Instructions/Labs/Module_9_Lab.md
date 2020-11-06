@@ -369,7 +369,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex2_task2_step2_1.png)
 
-1. On the **Prepare source** blade, select **+ Hyper-V Site**. 
+1. On the **source settings** blade, Select **No** for **Are you using system center VMM to manage Hyper-V hosts?** and then select **Add Hyper-V Site**. 
 
 1. On the **Create Hyper-V Site** blade, in the **Name** text box, type **az30307b Hyper-V site** and select **OK**:
 
@@ -407,7 +407,11 @@ The main tasks for this exercise are as follows:
 
 1. On the **Registration** page of the **Microsoft Azure Site Recovery Registration Wizard**, select **Finish**.
 
+    ![](Images/lab9/Ex2_task2_step17.png)
+
 1. Refresh the page displaying the Azure portal and repeat the sequence of steps until you reach the **Prepare source** blade. Ensure that both Hyper-V site and Hyper-V server have been added and select **OK**.
+
+    ![](Images/lab9/Ex2_task2_step18.png)
 
 1. On the **Target** blade, select **+ Storage account** and select the storage account you created in the first task of this exercise.
 
