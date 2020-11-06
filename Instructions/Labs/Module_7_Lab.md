@@ -115,7 +115,8 @@ The main tasks for this exercise are as follows:
    
    ![](Images/az303-07-01.png)
    
-    > **Note**: Make sure you replace the value of Deployment-id. You can find value of Deployment-id the in the Environment Details tab
+    > **Note**: Replace the Deployment-id with your deployment id given in environment detail page
+    
 1. From the Cloud Shell pane, run the following to identify the user principal name of the newly created Azure AD user:
 
    ```powershell
@@ -240,7 +241,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/az303-07-04.png)
 
-    > **Note**: Make sure you replace the value of Deployment-id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
+    > **Note**: replace the Deployment-id with your deploymnet id given in environment detail page and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
       
 #### Task 2: Test the RBAC role assignment
 
