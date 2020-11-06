@@ -1,7 +1,7 @@
 ---
 lab:
-    title: '7: Managing Azure Role-Based Access Control'
-    module: 'Module 7: Implement and Manage Azure Governance'
+    title: '3: Managing Azure Role-Based Access Control'
+    module: 'Module 3: Implement and Manage Azure Governance'
 ---
 
 # Lab: Managing Azure Role-Based Access Control
