@@ -60,9 +60,19 @@ None
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
+   ![](Images/lab9/Ex0_task1_step1.png)
+    
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
+  
+     >**Note**: 
+    
+     i. If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab and **click on Show advanced settings**.
+    
+      ![](Images/lab9/Ex0_task1_step1_1.png) 
+    
+     ii. Select existing Resource Group as **az3035a-labRG-Deployment-id** and enter unique names for **storage account name** and **File Share** and select **Create storage**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
+      ![](Images/lab9/Ex0_task1_step1_2.png) 
 
 1. From the Cloud Shell pane, run the following to create a new directory named **az30305a1** and set it as your current directory:
 
@@ -92,13 +102,13 @@ None
 
     >**Note**: Make sure to record the value of the username and the corresponding password.
 
-1. From the Cloud Shell pane, run the following to create the resource group which will host the App Service web app (replace the `<location>` placeholder with the name of the Azure region that is available in your subscription and which is closest to the location of your lab computer):
+1. From the Cloud Shell pane, run the following to create variables storing the values of location and resource group which will be used to host the App Service web app (replace the `<location>` placeholder with the name of the Azure region that is available in your subscription and which is closest to the location of your lab computer):
 
    ```sh
    LOCATION='<location>'
-   RGNAME='az30305a-labRG'
-   az group create --location $LOCATION --resource-group $RGNAME
+   RGNAME='az30305a-labRG-Deployment-id'
    ```
+   > **Note**: Make sure you replace the value of Deployment-id. You can find value of Deployment-id the in the Environment Details tab
 
 1. From the Cloud Shell pane, run the following to create a new App Service plan:
 
@@ -220,11 +230,12 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to retrieve the publishing URL of the newly created staging slot of the App Service web app:
 
    ```sh
-   RGNAME='az30305a-labRG'
+   RGNAME='az30305a-labRG-Deployment-id'
    WEBAPPNAME=$(az webapp list --resource-group $RGNAME --query "[?starts_with(name,'az30305')]".name --output tsv)
    SLOTNAME='staging'
    URLSTAGING=$(az webapp deployment list-publishing-credentials --name $WEBAPPNAME --slot $SLOTNAME --resource-group $RGNAME --query scmUri --output tsv)
    ```
+   > **Note**: Make sure you replace the value of Deployment-id. You can find value of Deployment-id the in the Environment Details tab
 
 1. From the Cloud Shell pane, run the following to set the git remote alias representing the staging slot of the Git-enabled Azure App Service web app:
 
@@ -273,7 +284,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to verify set the variables representing  the name of the target web app and its distribution group:
 
    ```sh
-   RGNAME='az30305a-labRG'
+   RGNAME='az30305a-labRG-Deployment-id'
    WEBAPPNAME=$(az webapp list --resource-group $RGNAME --query "[?starts_with(name,'az30305')]".name --output tsv)
    ```
 
@@ -285,26 +296,3 @@ The main tasks for this exercise are as follows:
 
     >**Note**: Traffic distribution is not entirely deterministic, but you should see several responses from each target site.
 
-#### Task 4: Remove Azure resources deployed in the lab
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   ```sh
-   az group list --query "[?starts_with(name,'az30305')]".name --output tsv
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
-
-   ```sh
-   az group list --query "[?starts_with(name,'az30305')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-   ```
-
-1. From the Cloud Shell pane, run the following to remove the **az30305a1** directory:
-
-   ```sh
-   rm -r ~/az30305a1
-   ```
-   
-1. Close the Cloud Shell pane.
