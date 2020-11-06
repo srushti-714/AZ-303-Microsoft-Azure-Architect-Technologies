@@ -254,7 +254,7 @@ The main tasks for this exercise are as follows:
    Set-Content './az30302ablob.html' '<h3>Hello from az30302ablob via SAS</h3>'
    ```
 
-1. From the Cloud Shell pane, run the following to upload the newly created file as a blob into container1 of the Azure Storage account you created earlier in this exercise (replace the `<sas_token>` placeholder with the value of the shared access signature you copied to Clipboard earlier in this task):
+1. From the Cloud Shell pane, run the following to upload the newly created file as a blob into container1 of the Azure Storage account you created earlier in this exercise (replace the `<sas_token>` placeholder with the value of the shared access signature you copied to Clipboard earlier in this task):(**Please check the storage account and confirm it is the one you created in Exercise 1 -> Task 1: Create an Azure Storage account**)
 
    ```powershell
    $storageAccountName = (Get-AzStorageAccount -ResourceGroupName 'az30302a-labRG')[0].StorageAccountName
