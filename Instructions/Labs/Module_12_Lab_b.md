@@ -65,27 +65,35 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Configure an Azure Function App Storage Blob trigger
 
-1. From your lab computer, start a web browser, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
+1. From your lab computer, start a web browser, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account in Environment Detail page.
 
-1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
+2. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
-1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
+    ![](Images/lab9/Ex0_task1_step1.png)
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
+3. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
-1. From the Cloud Shell pane, run the following to generate a pseudo-random string of characters that will be used as a prefix for names of resources you will provision in this exercise:
+    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show Advanced Settings**.
+
+   ![](Images/lab9/Ex0_task1_step1_1.png)
+   
+   1. **While selecting the resource group please select AZ30307C-LABRG-DEPLOYMENTID**
+   
+   ![](Images/lab9/Ex0_task1_step1_2.png)
+
+4. From the Cloud Shell pane, run the following to generate a pseudo-random string of characters that will be used as a prefix for names of resources you will provision in this exercise:
 
    ```sh
    export PREFIX=$(echo `openssl rand -base64 5 | cut -c1-7 | tr '[:upper:]' '[:lower:]' | tr -cd '[[:alnum:]]._-'`)
    ```
 
-1. From the Cloud Shell pane, run the following to designate the Azure region into which you want to provision resources in this lab (replace the `<Azure region>` placeholder with the name of the Azure region that is available in your subscription and which is closest to the location of your lab computer):
+5. From the Cloud Shell pane, run the following to designate the Azure region into which you want to provision resources in this lab (replace the `<Azure region>` placeholder with the name of the Azure region that is available in your subscription and which is closest to the location of your lab computer):
 
    ```sh
    export LOCATION='<Azure region>'
    ```
 
-1. From the Cloud Shell pane, run the following to create a resource group that will host all resources that you will provision in this lab:
+6. From the Cloud Shell pane, run the following to create a resource group that will host all resources that you will provision in this lab:
 
 ` Note : replace the Deployment-id with your deploymnet id given in environment detail page`
 
@@ -95,7 +103,7 @@ The main tasks for this exercise are as follows:
    az group create --name "${RESOURCE_GROUP_NAME}" --location "$LOCATION"
    ```
 
-1. From the Cloud Shell pane, run the following to create an Azure Storage account that will host container with blobs to be processed by the Azure function:
+7. From the Cloud Shell pane, run the following to create an Azure Storage account that will host container with blobs to be processed by the Azure function:
 
    ```sh
    export STORAGE_ACCOUNT_NAME="az30309a${PREFIX}"
@@ -107,19 +115,19 @@ The main tasks for this exercise are as follows:
 
     > **Note**: The same storage account will be also used by the Azure function to facilitate its own processing requirements. In real-world scenarios, you might want to consider creating a separate storage account for this purpose.
 
-1. From the Cloud Shell pane, run the following to create a variable storing the value of the connection string property of the Azure Storage account:
+8. From the Cloud Shell pane, run the following to create a variable storing the value of the connection string property of the Azure Storage account:
 
    ```sh
    export STORAGE_CONNECTION_STRING=$(az storage account show-connection-string --name "${STORAGE_ACCOUNT_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" -o tsv)
    ```
 
-1. From the Cloud Shell pane, run the following to create a container that will host blobs to be processed by the Azure function:
+9. From the Cloud Shell pane, run the following to create a container that will host blobs to be processed by the Azure function:
 
    ```sh
    az storage container create --name "${CONTAINER_NAME}" --account-name "${STORAGE_ACCOUNT_NAME}" --connection-string "${STORAGE_CONNECTION_STRING}"
    ```
 
-1. From the Cloud Shell pane, run the following to create an Application Insights resource that will provide monitoring of the Azure Function processing blobs and store its key in a variable:
+10. From the Cloud Shell pane, run the following to create an Application Insights resource that will provide monitoring of the Azure Function processing blobs and store its key in a variable:
 
    ```sh
    export APPLICATION_INSIGHTS_NAME="az30309ai${PREFIX}"
@@ -129,7 +137,7 @@ The main tasks for this exercise are as follows:
    export APPINSIGHTS_KEY=$(az resource show --name "${APPLICATION_INSIGHTS_NAME}" --query "properties.InstrumentationKey" --resource-group "${RESOURCE_GROUP_NAME}" --resource-type "Microsoft.Insights/components" -o tsv)
    ```
 
-1. From the Cloud Shell pane, run the following to create the Azure Function that will process events corresponding to creation of Azure Storage blobs:
+11. From the Cloud Shell pane, run the following to create the Azure Function that will process events corresponding to creation of Azure Storage blobs:
 
    ```sh
    export FUNCTION_NAME="az30309f${PREFIX}"
@@ -137,7 +145,7 @@ The main tasks for this exercise are as follows:
    az functionapp create --name "${FUNCTION_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" --storage-account "${STORAGE_ACCOUNT_NAME}" --consumption-plan-location "${LOCATION}" --runtime "dotnet" --functions-version 2
    ```
 
-1. From the Cloud Shell pane, run the following to configure Application Settings of the newly created function, linking it to the Application Insights and Azure Storage account:
+12. From the Cloud Shell pane, run the following to configure Application Settings of the newly created function, linking it to the Application Insights and Azure Storage account:
 
    ```sh
    az functionapp config appsettings set --name "${FUNCTION_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" --settings "APPINSIGHTS_INSTRUMENTATIONKEY=$APPINSIGHTS_KEY" FUNCTIONS_EXTENSION_VERSION=~2
@@ -145,15 +153,15 @@ The main tasks for this exercise are as follows:
    az functionapp config appsettings set --name "${FUNCTION_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" --settings "STORAGE_CONNECTION_STRING=$STORAGE_CONNECTION_STRING" FUNCTIONS_EXTENSION_VERSION=~2
    ```
 
-1. Switch to the Azure portal and navigate to the blade of the Azure Function app you created earlier in this task.
+13. Switch to the Azure portal and navigate to the blade of the Azure Function app you created earlier in this task.
 
-1. On the Azure Function app blade, select **Functions** and then, select **+ Add**. 
+14. On the Azure Function app blade, select **Functions** and then, select **+ Add**. 
 
-1. On the **New Function** blade, select **Azure Blob Storage trigger** template.
+15. On the **New Function** blade, select **Azure Blob Storage trigger** template.
 
     ![](Images/lab9/az30303.jpg)
 
-1. On the **New Function** blade, specify the following and select **Create Function** to create a new function within the Azure function:
+16. On the **New Function** blade, specify the following and select **Create Function** to create a new function within the Azure function:
 
     | Setting | Value | 
     | --- | --- |
@@ -161,7 +169,7 @@ The main tasks for this exercise are as follows:
     | Path | **workitems/{name}** |
     | Storage account connection | **STORAGE_CONNECTION_STRING** |
 
-1. On the Azure Function app **BlobTrigger** function blade, select **Code + Test** and review the content of the run.csx file. 
+17. On the Azure Function app **BlobTrigger** function blade, select **Code + Test** and review the content of the run.csx file. 
 
    ```csharp
    public static void Run(Stream myBlob, string name, ILogger log)
@@ -177,7 +185,7 @@ The main tasks for this exercise are as follows:
 
 1. If necessary, restart the Bash session in the Cloud Shell.
 
-1. From the Cloud Shell pane, run the following to repopulate variables that you used in the previous task:
+2. From the Cloud Shell pane, run the following to repopulate variables that you used in the previous task:
 
 ` Note : replace the Deployment-id with your deploymnet id given in environment detail page`
 
@@ -189,7 +197,7 @@ The main tasks for this exercise are as follows:
    export CONTAINER_NAME="workitems"
    ```
 
-1. From the Cloud Shell pane, run the following to upload a test blob to the Azure Storage account you created earlier in this task:
+3. From the Cloud Shell pane, run the following to upload a test blob to the Azure Storage account you created earlier in this task:
 
    ```sh
    export STORAGE_ACCESS_KEY="$(az storage account keys list --account-name "${STORAGE_ACCOUNT_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" --query "[0].value" --output tsv)"
@@ -201,23 +209,23 @@ The main tasks for this exercise are as follows:
    az storage blob upload --file "${WORKITEM}" --container-name "${CONTAINER_NAME}" --name "${WORKITEM}" --auth-mode key --account-key "${STORAGE_ACCESS_KEY}" --account-name "${STORAGE_ACCOUNT_NAME}"
    ```
     
-1. In the Azure portal, navigate back to the blade displaying the Azure Function app you created in the previous task.
+4. In the Azure portal, navigate back to the blade displaying the Azure Function app you created in the previous task.
 
-1. On the Azure Function app blade, select **Switch to classic experience \| Continue to classic experience**.
+5. On the Azure Function app blade, select **Switch to classic experience \| Continue to classic experience**.
 
-1. On the Azure Function app blade, select **Monitor** entry. 
+6. On the Azure Function app blade, select **Monitor** entry. 
 
     ![](Images/lab9/az30304.jpg)
     
-1. Note a single event entry representing uploading of the blob. Select the entry to view the **Invocation Details** blade.
+7. Note a single event entry representing uploading of the blob. Select the entry to view the **Invocation Details** blade.
 
     > **Note**: Since the Azure function app in this exercise runs in the Consumption plan, there may be a delay of up to several minutes between uploading a blob and the function being triggered. It is possible to minimize the latency by implementing the Function app by using an App Service (rather than Consumption) plan.
 
-1. Go back to the **Monitor** blade, and select the link **Run query in Application Insights**.
+8. Go back to the **Monitor** blade, and select the link **Run query in Application Insights**.
 
     ![](Images/lab9/az30305.jpg)
 
-1. In the Application Insights portal, review the autogenerated Kusto query and its results.
+9. In the Application Insights portal, review the autogenerated Kusto query and its results.
 
 
 ### Exercise 2: Configure and validate an Azure Event Grid subscription-based queue messaging 
@@ -226,28 +234,28 @@ The main tasks for this exercise are as follows:
 
 1. Configure an Azure Event Grid subscription-based queue messaging
 
-1. Validate an Azure Event Grid subscription-based queue messaging
+2. Validate an Azure Event Grid subscription-based queue messaging
 
-1. Remove Azure resources deployed in the lab
+3. Remove Azure resources deployed in the lab
 
 
 #### Task 1: Configure an Azure Event Grid subscription-based queue messaging
 
 1. If necessary, restart the Bash session in the Cloud Shell.
 
-1. From the Cloud Shell pane, run the following to register the eventgrid resource provider in your subscription:
+2. From the Cloud Shell pane, run the following to register the eventgrid resource provider in your subscription:
 
    ```sh
    az provider register --namespace microsoft.eventgrid
    ```
   
-1. From the Cloud Shell pane, run the following to generate a pseudo-random string of characters that will be used as a prefix for names of resources you will provision in this exercise:
+3. From the Cloud Shell pane, run the following to generate a pseudo-random string of characters that will be used as a prefix for names of resources you will provision in this exercise:
 
    ```sh
    export PREFIX=$(echo `openssl rand -base64 5 | cut -c1-7 | tr '[:upper:]' '[:lower:]' | tr -cd '[[:alnum:]]._-'`)
    ```
 
-1. From the Cloud Shell pane, run the following to identify the Azure region hosting the target resource group and its existing resources: 
+4. From the Cloud Shell pane, run the following to identify the Azure region hosting the target resource group and its existing resources: 
 
 ` Note : replace the Deployment-id with your deploymnet id given in environment detail page`
 
@@ -261,7 +269,7 @@ The main tasks for this exercise are as follows:
    az group create --name "${RESOURCE_GROUP_NAME}" --location $LOCATION
    ```
 
-1. From the Cloud Shell pane, run the following to create an Azure Storage account that will host a container to be used by the Event Grid subscription that you will configure in this task:
+5. From the Cloud Shell pane, run the following to create an Azure Storage account that will host a container to be used by the Event Grid subscription that you will configure in this task:
 
    ```sh
    export STORAGE_ACCOUNT_NAME="az30309bst${PREFIX}"
@@ -271,25 +279,25 @@ The main tasks for this exercise are as follows:
    export STORAGE_ACCOUNT=$(az storage account create --name "${STORAGE_ACCOUNT_NAME}" --kind "StorageV2" --location "${LOCATION}" --resource-group "${RESOURCE_GROUP_NAME}" --sku "Standard_LRS")
    ```
 
-1. From the Cloud Shell pane, run the following to create a variable storing the value of the connection string property of the Azure Storage account:
+6. From the Cloud Shell pane, run the following to create a variable storing the value of the connection string property of the Azure Storage account:
 
    ```sh
    export STORAGE_CONNECTION_STRING=$(az storage account show-connection-string --name "${STORAGE_ACCOUNT_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" -o tsv)
    ```
 
-1. From the Cloud Shell pane, run the following to create a container that will to be used by the Event Grid subscription:
+7. From the Cloud Shell pane, run the following to create a container that will to be used by the Event Grid subscription:
 
    ```sh
    az storage container create --name "${CONTAINER_NAME}" --account-name "${STORAGE_ACCOUNT_NAME}" --connection-string "${STORAGE_CONNECTION_STRING}"
    ```
 
-1. From the Cloud Shell pane, run the following to create a variable storing the value of the Resource Id property of the Azure Storage account:
+8. From the Cloud Shell pane, run the following to create a variable storing the value of the Resource Id property of the Azure Storage account:
 
    ```sh
    export STORAGE_ACCOUNT_ID=$(az storage account show --name "${STORAGE_ACCOUNT_NAME}" --query "id" --resource-group "${RESOURCE_GROUP_NAME}" -o tsv)
    ```
 
-1. From the Cloud Shell pane, run the following to create the Storage Account queue that will store messages generated by the Event Grid subscription that you will configure in this task:
+9. From the Cloud Shell pane, run the following to create the Storage Account queue that will store messages generated by the Event Grid subscription that you will configure in this task:
 
    ```sh
    export QUEUE_NAME="az30309bq${PREFIX}"
@@ -297,7 +305,7 @@ The main tasks for this exercise are as follows:
    az storage queue create --name "${QUEUE_NAME}" --account-name "${STORAGE_ACCOUNT_NAME}" --connection-string "${STORAGE_CONNECTION_STRING}"
    ```
 
-1. From the Cloud Shell pane, run the following to create the Event Grid subscription that will facilitate generation of messages in Azure Storage queue in response to blob uploads to the designated container in the Azure Storage account:
+10. From the Cloud Shell pane, run the following to create the Event Grid subscription that will facilitate generation of messages in Azure Storage queue in response to blob uploads to the designated container in the Azure Storage account:
 
    ```sh
    export QUEUE_SUBSCRIPTION_NAME="az30309bqsub${PREFIX}"
@@ -319,15 +327,15 @@ The main tasks for this exercise are as follows:
 
    az storage blob upload --file "${WORKITEM}" --container-name "${CONTAINER_NAME}" --name "${WORKITEM}" --auth-mode key --account-key "${AZURE_STORAGE_ACCESS_KEY}" --account-name "${STORAGE_ACCOUNT_NAME}"
    ```
-1. In the Azure portal, navigate to the blade displaying the Azure Storage account you created in the previous task of this exercise. 
+2. In the Azure portal, navigate to the blade displaying the Azure Storage account you created in the previous task of this exercise. 
 
-1. On the blade of the Azure Storage account, select **Queues** to display the list of its queues. 
+3. On the blade of the Azure Storage account, select **Queues** to display the list of its queues. 
 
-1. Select the entry representing the queue you created in the previous task of this exercise.
+4. Select the entry representing the queue you created in the previous task of this exercise.
 
-1. Note that the queue contains a single message. Select its entry to display the **Message properties** blade. 
+5. Note that the queue contains a single message. Select its entry to display the **Message properties** blade. 
 
-1. In the **MESSAGE BODY**, note the value of the **url** property, representing the URL of the Azure Storage blob you uploaded in the previous task.
+6. In the **MESSAGE BODY**, note the value of the **url** property, representing the URL of the Azure Storage blob you uploaded in the previous task.
 
 
 #### Task 3: Remove Azure resources deployed in the lab
@@ -340,10 +348,10 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
 
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
+2. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
 
    ```sh
    az group list --query "[?starts_with(name,'az30309')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
    ```
 
-1. Close the Cloud Shell pane.
+3. Close the Cloud Shell pane.
