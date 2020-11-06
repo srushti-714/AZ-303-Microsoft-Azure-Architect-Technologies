@@ -137,6 +137,8 @@ The main tasks for this exercise are as follows:
 
 1. In the **Hyper-V Manager** console, select the **az30307a-hv-vm** node, select **New** and, in the cascading menu, select **Virtual Machine**. This will start the **New Virtual Machine Wizard**. 
 
+    ![](Images/lab9/Ex0_task2_step4.png)
+
 1. On the **Before You Begin** page of the **New Virtual Machine Wizard**, select **Next >**.
 
 1. On the **Specify Name and Location** page of the **New Virtual Machine Wizard**, specify the following settings and select **Next >**:
