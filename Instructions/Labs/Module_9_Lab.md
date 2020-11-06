@@ -57,7 +57,7 @@ The main tasks for this exercise are as follows:
    
    ![](Images/Ex0_task1_step1_1.png)
    
-   **While selecting the resource group please select AZ30307C-LABRG-DEPLOYMENTID**
+   1. **While selecting the resource group please select AZ30307C-LABRG-DEPLOYMENTID**
    
    ![](Images/Ex0_task1_step1_2.png)
 
