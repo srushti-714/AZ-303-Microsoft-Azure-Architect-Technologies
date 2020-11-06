@@ -99,9 +99,9 @@ The main tasks for this exercise are as follows:
 
 1. When prompted, sign in with the following credentials:
 
--  User Name: **Student**
+    - User Name: **Student**
 
--  Password: **Pa55w.rd1234**
+    - Password: **Pa55w.rd1234**
 
 1. Within the Remote Desktop session to **az30307a-hv-vm**, in the Server Manager window, click **Local Server**, click the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
 
