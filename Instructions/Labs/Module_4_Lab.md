@@ -188,7 +188,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-avset** availability set entry, and on the **az30301a-avset** blade, note the fault domain and update domain values assigned the two Azure VMs.
 
-1. In the Azure portal, navigate back to the **az30301a-labRG** resource group blade, in the list of resources, select the **az30301a-lb** load balancer entry, and on the **az30301a-lb** blade, note the public IP address entry.
+1. In the Azure portal, navigate back to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-lb** load balancer entry, and on the **az30301a-lb** blade, note the public IP address entry.
 
 1. In the Azure portal, start a **Bash** session in the Cloud Shell pane. 
 
@@ -340,11 +340,11 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm0** virtual machine entry, and on the **az30301b-vm0** blade, note the **Location** and **Availability zone** entries. 
 
-1. In the Azure portal, navigate to the **az30301b-labRG** resource group blade, in the list of resources, select the **az30301b-vm1** virtual machine entry, and on the **az30301b-vm1** blade, note the **Location** and **Availability zone** entries. 
+1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm1** virtual machine entry, and on the **az30301b-vm1** blade, note the **Location** and **Availability zone** entries. 
 
     > **Note**: The entries you reviewed confirm that each Azure VM resides in a different availability zone.
 
-1. In the Azure portal, navigate to the **az30301b-labRG** resource group blade and, in the list of resources, select the **az30301b-lb** load balancer entry, and on the **az30301b-lb** blade, note the public IP address entry.
+1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade and, in the list of resources, select the **az30301b-lb** load balancer entry, and on the **az30301b-lb** blade, note the public IP address entry.
 
 1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane. 
 
@@ -480,7 +480,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource Group | **az30301c-labRG** |
+    | Resource Group | **az30301c-labRG-Deployment-id** |
     | Virtual Network | **az30301c-vnet** |
 
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VM instances in the Azure Virtual Machine Scale Set in its backend pool. 
@@ -489,7 +489,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: In this configuration, it is not possible to use Network Watcher to view the effective network security rules (that is one of distinctions between Azure VMs and instances of an Azure VM Scale Set). Similarly, you cannot rely on use **Connection troubleshoot** to test network connectivity from Azure VM Scale Set instances, although it is possible to use it to test connectivity from the Azure Application Gateway.
 
-1. In the Azure portal, navigate to the **az30301c-labRG** resource group blade, in the list of resources, and select the **az30301c-vmss** virtual machine scale set entry. 
+1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, and select the **az30301c-vmss** virtual machine scale set entry. 
 
 1. On the **az30301c-vmss** blade, note the **Location** and **Fault domains** entries. 
 
@@ -501,7 +501,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Verify that each instance resides in a different availability zone.
 
-1. In the Azure portal, navigate to the **az30301c-labRG** resource group blade and, in the list of resources, select the **az30301c-appgw** load balancer entry, and on the **az30301c-appgw** blade, note the public IP address entry.
+1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade and, in the list of resources, select the **az30301c-appgw** load balancer entry, and on the **az30301c-appgw** blade, note the public IP address entry.
 
 1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane. 
 
