@@ -24,17 +24,7 @@ After completing this lab, you will be able to:
 
 -  Assign a custom RBAC role
 
-
-## Lab Environment
-  
-Windows Server admin credentials
-
--  User Name: **Student**
-
--  Password: **Pa55w.rd1234**
-
 Estimated Time: 60 minutes
-
 
 ## Lab Files
 
