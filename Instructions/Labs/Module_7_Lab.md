@@ -60,14 +60,24 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Deploy an Azure VM by using an Azure Resource Manager template
 
-1. From your lab computer, start a web browser, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
+1. From your lab computer, start a web browser, navigate to the [Azure portal](https://portal.azure.com), and sign in using the azure credentials provided in the Environment Details tab.
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
+   ![](Images/lab9/Ex0_task1_step1.png)
+    
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, click on Show advanced settings and select existing Resource Group as **az30311a-labRG** and enter unique names for **storage account name** and **File Share** and select **Create storage**. 
+    >**Note**: 
+    
+    1. If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab and **click on Show advanced settings**.
+    
+       ![](Images/lab9/Ex0_task1_step1_1.png)
+    
+    1. Select existing Resource Group as **az30311a-labRG** and enter unique names for **storage account name** and **File Share** and select **Create storage**. 
 
+      ![](Images/lab9/Ex0_task1_step1_2.png)
+      
 1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\azuredeploy30311rga.json** into the Cloud Shell home directory.
 
 1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\azuredeploy30311rga.parameters.json**.
@@ -106,16 +116,16 @@ The main tasks for this exercise are as follows:
    $passwordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
    $passwordProfile.Password = 'Pa55w.rd1234'
    $passwordProfile.ForceChangePasswordNextLogin = $false
-   New-AzureADUser -AccountEnabled $true -DisplayName 'az30311aaduser1' -PasswordProfile $passwordProfile -MailNickName 'az30311aaduser1' -UserPrincipalName "az30311aaduser1@$domainName"
+   New-AzureADUser -AccountEnabled $true -DisplayName 'aduserDeployment-id' -PasswordProfile $passwordProfile -MailNickName 'aduserDeployment-id' -UserPrincipalName "aduserDeployment-id@$domainName"
    ```
-
+    > **Note**: Make sure you replace the value of Deployment-id. You can find value of Deployment-id the in the Environment Details tab
 1. From the Cloud Shell pane, run the following to identify the user principal name of the newly created Azure AD user:
 
    ```powershell
-   (Get-AzureADUser -Filter "MailNickName eq 'az30311aaduser1'").UserPrincipalName
+   (Get-AzureADUser -Filter "MailNickName eq 'aduserDeployment-id'").UserPrincipalName
    ```
 
-      > **Note**: Record the user principal name of the newly created Azure AD user. You will need it later in this lab.
+    > **Note**: Make sure you replace the value of Deployment-id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
 
 1. Close the Cloud Shell pane.
 
@@ -226,14 +236,16 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Role | **Virtual Machine Operator (Custom)** |
     | Assign access to | **Azure AD user, group, or service principal** |
-    | Select | **az30311aaduser1** |
+    | Select | **aduserDeployment-id** |
 
 
+    > **Note**: Make sure you replace the value of Deployment-id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
+      
 #### Task 2: Test the RBAC role assignment
 
-1. From the lab computer, start a new in-private web browser session, navigate to the [Azure portal](https://portal.azure.com), and sign in by using the **az30311aaduser1** user account with the **Pa55w.rd1234** password.
+1. From the lab computer, start a new in-private web browser session, navigate to the [Azure portal](https://portal.azure.com), and sign in by using the **aduserDeployment-id** user account with the **Pa55w.rd1234** password.
 
-    > **Note**: Make sure to use the user principal name of the **az30311aaduser1** user account, which you recorded earlier in this lab.
+    > **Note**: Make sure to use the user principal name of the **aduserDeployment-id** user account, which you recorded earlier in this lab.
 
 1. In the Azure portal, navigate to the **Resource groups** blade. Note that you are not able to see any resource groups. 
 
