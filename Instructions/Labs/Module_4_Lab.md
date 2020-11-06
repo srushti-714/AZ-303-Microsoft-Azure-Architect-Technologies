@@ -107,24 +107,18 @@ The main tasks for this exercise are as follows:
    az provider register --namespace 'Microsoft.Insights'
    ```
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301suba.json** into the Cloud Shell home directory.(**Note:- this is how you can upload files from your local machine to cloud shell pane, please skip this step for now**)
-
-    ![](Images/lab9/Ex0_task1_step3.png)
-
-1. From the Cloud Shell pane, the following command is used to create a resource group (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer): (**Note:- just go through the command, as the resource groups are pre-created**)
+1. From the Cloud Shell pane, run the following to create variables storing the values of locatio nwhich will be used to host the resources(replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer): (**Note:- just go through the command, as the resource groups are pre-created**)
 
    ```sh
    LOCATION='<Azure region>'
-   az deployment sub create \
-   --location $LOCATION \
-   --template-file azuredeploy30301suba.json \
-   --parameters rgName=az30301a-labRG rgLocation=$LOCATION
    ```
 
       > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rga.json**.
+1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rga.json**.
 
+    ![](Images/lab9/Ex0_task1_step3.png)
+    
 1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rga.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy an Azure Load Balancer Basic with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core into the same availability set:
@@ -136,7 +130,7 @@ The main tasks for this exercise are as follows:
    --parameters @azuredeploy30301rga.parameters.json
    ```
 
-    > **Note**: Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
+    > **Note**:Make sure you replace the value of Deployment-id, you can find value of Deployment-id the in the Environment Details tab. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
 
 1. In the Azure portal, close the **Cloud Shell** pane. 
 
