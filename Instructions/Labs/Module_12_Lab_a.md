@@ -210,6 +210,7 @@ The main tasks for this exercise are as follows:
    ```html
    <h1>Azure App Service - Sample Static HTML Site v1.0.1</h1>
    ```
+       ![](Images/lab9/az30301.jpg)
 
 1. Save the changes and close the editor window. 
 
@@ -230,7 +231,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to retrieve the publishing URL of the newly created staging slot of the App Service web app:
 
    ```sh
-   RGNAME='az30305a-labRG-Deployment-id'
+   RGNAME='az30305a-labRG-Deployment-Id'
    WEBAPPNAME=$(az webapp list --resource-group $RGNAME --query "[?starts_with(name,'az30305')]".name --output tsv)
    SLOTNAME='staging'
    URLSTAGING=$(az webapp deployment list-publishing-credentials --name $WEBAPPNAME --slot $SLOTNAME --resource-group $RGNAME --query scmUri --output tsv)
@@ -265,6 +266,8 @@ The main tasks for this exercise are as follows:
 1. On the deployment slots blade, select **Swap**.
 
 1. On the **Swap** blade, select **Swap** and then select **Close**.
+
+![](Images/lab9/az30302.jpg)
 
 1. Switch to the browser tab showing the App Service web app and refresh the browser window. Verify that it displays the changes you deployed to the staging slot.
 
