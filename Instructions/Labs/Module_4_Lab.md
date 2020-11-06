@@ -160,6 +160,8 @@ The main tasks for this exercise are as follows:
     | Virtual machine | **az30301a-vm0** |
     | Network interface | **az30301a-nic0** |
 
+   >**Note**: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301a-vm0** again.
+   
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP. 
 
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
@@ -309,7 +311,9 @@ The main tasks for this exercise are as follows:
     | Resource group | **az30301b-labRG-Deployment-id** |
     | Virtual machine | **az30301b-vm0** |
     | Network interface | **az30301b-nic0** |
-
+    
+   >**Note**: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
+   
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP. 
 
     > **Note**: This listing is also practically identical to the one you viewed in the previous exercise, with network-level protection implemented by using a network security group associated with the subnet to which both Azure VMs are connected. Keep in mind, however, that the network security group is, in this case, required for the HTTP and RDP traffic to reach the backend pool Azure VMs, due to the usage of the Azure Load Balancer Standard SKU (NSGs are optional when using the Basic SKU).
