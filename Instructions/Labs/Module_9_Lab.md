@@ -274,6 +274,8 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** blade, select **+ Add**.
 
+    ![](Images/lab9/Ex2_task1_step1.png)
+
 1. On the **Basics** tab of the **Create virtual network** blade, specify the following settings (leave others with their default values) and select **Next: IP Addresses**:
 
     | Setting | Value |
@@ -282,6 +284,8 @@ The main tasks for this exercise are as follows:
     | Resource group | the name of a new resource group **az30307c-labRG** |
     | Name | **az30307c-dr-vnet** |
     | Region | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
+
+    ![](Images/lab9/Ex2_task1_step2.png)
 
 1. On the **IP addresses** tab of the **Create virtual network** blade, in the **IPv4 address space** text box, type **10.7.0.0/16** and select **+ Add subnet**.
 
@@ -292,6 +296,8 @@ The main tasks for this exercise are as follows:
     | Subnet name | **subnet0** |
     | Subnet address range | **10.7.0.0/24** |
 
+    ![](Images/lab9/Ex2_task1_step4.png)
+    
 1. Back on the **IP addresses** tab of the **Create virtual network** blade, select **Review + create**.
 
 1. On the **Review + create** tab of the **Create virtual network** blade, select **Create**.
@@ -336,6 +342,8 @@ The main tasks for this exercise are as follows:
 
 1. On the **Basics** tab of the **Create storage account** blade, select **Review + create**.
 
+    ![](Images/lab9/Ex2_task1_step14.png)
+
 1. On the **Review + create** tab of the **Create storage account** blade, select **Create**.
 
 
@@ -343,7 +351,9 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30307a-hv-vm**, in the Azure portal, on the **az30307b-rsvault** blade, in the **Getting started** section, select **Site Recovery**
 
-1. On the **az30307b-rsvault | Site Recovery** blade, in the **For on-premises machines** section, select **Prepare infrastructure**. 
+1. On the **az30307b-rsvault | Site Recovery** blade, select **Prepare infrastructure** Under Hyper-V's to Azure. 
+
+    ![](Images/lab9/Ex2_task2_step2.png)
 
 1. On the **Protection goal** blade, select the following settings (leave others with their default values) and select **OK**:
 
@@ -357,15 +367,21 @@ The main tasks for this exercise are as follows:
 
 1. On the **Deployment planning** blade, in the drop-down list labeled **Have you completed deployment planning?**, select **Yes, I have done it** and select **OK**:
 
+    ![](Images/lab9/Ex2_task2_step2_1.png)
+
 1. On the **Prepare source** blade, select **+ Hyper-V Site**. 
 
 1. On the **Create Hyper-V Site** blade, in the **Name** text box, type **az30307b Hyper-V site** and select **OK**:
+
+    ![](Images/lab9/Ex2_task2_step5.png)
 
 1. Back on the **Prepare source** blade, select **+ Hyper-V Server**. 
 
     >**Note**: You might have to refresh the browser page. 
 
 1. On the **Add Server** blade, select the **Download** link in step 3 of the procedure for registering on-premises Hyper-V hosts in order to download the Microsoft Azure Site Recovery Provider.
+
+    ![](Images/lab9/Ex2_task2_step8.png)
 
 1. When prompted, launch **AzureSiteRecoveryProvider.exe**. This will start the **Azure Site Recovery Provider Setup (Hyper-V server)** wizard.
 
@@ -375,11 +391,17 @@ The main tasks for this exercise are as follows:
 
 1. Switch to the Azure portal and, on the **Add Server** blade, select the **Download** button in step 4 of the procedure for registering on-premises Hyper-V hosts in order to download the vault registration key. When prompted, save the registration key in the **Downloads** folder.
 
+    ![](Images/lab9/Ex2_task2_step12.png)
+
 1. Switch to the **Provider installation** page and select **Register**. This will start the **Microsoft Azure Site Recovery Registration Wizard**.
 
 1. On the **Vault Settings** page of the **Microsoft Azure Site Recovery Registration Wizard**, select **Browse**, navigate to the **Downloads** folder, select the vault credentials file, and select **Open**.
 
+    ![](Images/lab9/Ex2_task2_step14.png)
+
 1. Back on the **Vault Settings** page of the **Microsoft Azure Site Recovery Registration Wizard**, select **Next**.
+
+    ![](Images/lab9/Ex2_task2_step15.png)
 
 1. On the **Proxy Settings** page of the **Microsoft Azure Site Recovery Registration Wizard**, accept the default settings and select **Next**.
 
