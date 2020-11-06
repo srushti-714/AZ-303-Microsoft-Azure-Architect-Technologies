@@ -415,7 +415,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **container1** blade, select **Change access level**, set the public access level to **Blob (anonymous read access for blobs only)** and select **OK**. 
 
-1. Switch back to the Windows PowerShell prompt and re-run the following command to verify that now you can access the uploaded blob anonymously (replace the `<storage_account_name>` placeholder with the value of the storage account you noted in the previous task):
+1. Switch back to the Windows PowerShell prompt and re-run the following command to verify that now you can access the uploaded blob anonymously (replace the `<storage_account_name>` placeholder with the value of the storage account you noted in the previous task): (**May see some errors but it is expected and please continue**)
 
    ```powershell
    Invoke-WebRequest -Uri 'https://<storage_account_name>.blob.core.windows.net/container1/az30302bblob.html'
