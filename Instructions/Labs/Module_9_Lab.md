@@ -109,6 +109,8 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30307a-hv-vm | Networking** blade, select **az30307a-hv-vm-nic1** and then select **Add inbound port rule**.
 
+   ![](Images/lab9/Ex0_task2_step3.png)
+
     >**Note**: Make sure that you modify the settings of **az30307a-hv-vm-nic1**, which has the public IP address assigned to it.
 
 1. On the **Add inbound security rule** blade, specify the following settings (leave others with their default values) and select **Add**:
@@ -119,9 +121,15 @@ The main tasks for this exercise are as follows:
     | Protocol | **Any** |
     | Name | **AllowRDPInBound** |
 
-1. On the **az30307a-hv-vm** blade, select **Overview**. 
+    ![](Images/lab9/Ex0_task2_step4_1.png)
+ 
+1. On the **az30307a-hv-vm** blade, select **Overview**.
+
+    ![](Images/lab9/Ex0_task2_step5.png)
 
 1. On the **az30307a-hv-vm** blade, select **Connect**, in the drop-down menu, select **RDP**, and then click **Download RDP File**.
+
+    ![](Images/lab9/Ex0_task2_step6.png)
 
 1. When prompted, sign in with the following credentials:
 
@@ -131,9 +139,19 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30307a-hv-vm**, in the Server Manager window, click **Local Server**, click the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
 
-1. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, browse to [Windows Server Evaluations](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019) OR (https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019), and download the Windows Server 2019 **VHD** file to the **F:\VHDs** folder (you will need to create it first). 
+    ![](Images/lab9/Ex0_task2_step7_1.png)
+
+1. Please Create Two Folders in F: Drive with Names **VHDs** and **VMs** .
+
+    ![](Images/lab9/Ex0_task2_step7_2_1.png)
+
+1. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, browse to [Windows Server Evaluations](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019) OR (https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019), and download the Windows Server 2019 **VHD** file and move the file from downloads to **F:\VHDs** folder. 
+
+    ![](Images/lab9/Ex0_task2_step7_2.png)
 
 1. Within the Remote Desktop session to **az30307a-hv-vm**, start **Hyper-V Manager**. 
+
+    ![](Images/lab9/Ex0_task2_step7_3.png)
 
 1. In the **Hyper-V Manager** console, select the **az30307a-hv-vm** node, select **New** and, in the cascading menu, select **Virtual Machine**. This will start the **New Virtual Machine Wizard**. 
 
@@ -149,7 +167,7 @@ The main tasks for this exercise are as follows:
     | Store the virtual machine in a different location | selected | 
     | Location | **F:\VMs** |
 
-    >**Note**: Make sure to create the **F:\VMs** folder.
+    ![](Images/lab9/Ex0_task2_step7_6.png)
 
 1. On the **Specify Generation** page of the **New Virtual Machine Wizard**, ensure that the **Generation 1** option is selected and select **Next >**:
 
@@ -159,9 +177,13 @@ The main tasks for this exercise are as follows:
 
 1. On the **Connect Virtual Hard Disk** page of the **New Virtual Machine Wizard**, select the option **Use an existing virtual hard disk**, set location to the VHD file you downloaded to the **F:\VHDs** folder, and select **Next >**.
 
+    ![](Images/lab9/Ex0_task2_step7_10.png)
+
 1. On the **Summary** page of the **New Virtual Machine Wizard**, select **Finish**.
 
 1. In the **Hyper-V Manager** console, select the newly created virtual machine and select **Start**. 
+
+    ![](Images/lab9/Ex0_task2_step7_12.png)
 
 1. In the **Hyper-V Manager** console, verify that the virtual machine is running and select **Connect**. 
 
@@ -171,7 +193,9 @@ The main tasks for this exercise are as follows:
 
 1. In the Virtual Machine Connection window to **az30307a-vm1**, on the **Customize settings** page, set the password of the built-in Administrator account to **Pa55w.rd1234** and select **Finish**. 
 
-1. In the Virtual Machine Connection window to **az30307a-vm1**, sign in by using the newly set password.
+1. In the Virtual Machine Connection window to **az30307a-vm1**, sign in by using the newly set password. Use CTRL+ALT+DELETE button to login.
+
+    ![](Images/lab9/Ex0_task2_step7_17_1.png)
 
 1. In the Virtual Machine Connection window to **az30307a-vm1**, start Windows PowerShell and, in the **Administrator: Windows PowerShell** window run the following to set the computer name. 
 
@@ -190,9 +214,11 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure Site Recovery vault
 
-1. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
+1. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials from environment detials tab.
 
 1. In the Azure portal, search for and select **Recovery Services vaults** and, on the **Recovery Services vaults** blade, select **+ Add**.
+
+    ![](Images/lab9/Ex1_task1_step2.png)
 
 1. On the **Basics** tab of the **Create Recovery Services vault** blade, specify the following settings (leave others with their default values) and select **Review + create**:
 
@@ -208,6 +234,9 @@ The main tasks for this exercise are as follows:
     >**Note**: By default, the default configuration for Storage Replication type is set to Geo-redundant (GRS) and Soft Delete is enabled. You will change these settings in the lab to simplify deprovisioning, but you should use them in your production environments.
 
 
+   ![](Images/lab9/Ex1_task1_step3.png)
+
+
 #### Task 2: Configure the Azure Site Recovery vault
 
 1. In the Azure portal, search for and select **Recovery Services vaults** and, on the **Recovery Services vaults** blade, select **az30307b-rsvault**.
@@ -220,10 +249,13 @@ The main tasks for this exercise are as follows:
 
     >**Note**: Storage replication type cannot be changed once you start protecting items.
 
+   ![](Images/lab9/Ex1_task2_step3_final.png)
+
 1. On the **az30307b-rsvault | Properties** blade, select the **Update** link under the **Security Settings** label.
 
 1. On the **Security Settings** blade, set **Soft Delete** to **Disable**, select **Save** and close the **Security Settings** blade.
 
+    ![](Images/lab9/Ex1_task2_step4.png)
 
 ### Exercise 2: Implement Hyper-V protection by using Azure Site Recovery vault
   
