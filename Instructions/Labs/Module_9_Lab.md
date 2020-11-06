@@ -41,7 +41,7 @@ Estimated Time: 120 minutes
 
 ## Lab Files
 
--  \\\\AZ303\\AllFiles\\Labs\\07\\azuredeploy30307suba.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\\07\\azuredeploy30307suba.json
 
 
 ### Exercise 0: Prepare the lab environment
