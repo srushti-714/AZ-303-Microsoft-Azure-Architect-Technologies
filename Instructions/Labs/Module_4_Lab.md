@@ -175,7 +175,7 @@ The main tasks for this exercise are as follows:
     | Source type | **Virtual machine** |
     | Virtual machine | **az30301a-vm0** |
     | Destination | **Select a virtual machine** |
-    | Resource group | **az30301a-labRG** |
+    | Resource group | **az30301a-labRG-Deployment-id** |
     | Virtual machine | **az30301a-vm1** |
     | Protocol | **TCP** |
     | Destination port| **80** |
