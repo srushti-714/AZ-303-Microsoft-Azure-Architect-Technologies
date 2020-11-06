@@ -45,12 +45,6 @@ After completing this lab, you will be able to:
 
 
 ## Lab Environment
-  
-Windows Server admin credentials
-
--  User Name: **azureuser**
-
--  Password: **Password.!!1**
 
 Estimated Time: 120 minutes
 
@@ -93,9 +87,19 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, open the **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
+    ![](Images/lab9/Ex0_task1_step1.png)
+   
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
+    >**Note**: 
+    
+    i. If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab and **click on Show advanced settings**.
+    
+    ![](Images/lab9/Ex0_task1_step1_1.png)
+    
+    ii. Select existing Resource Group as **az30311a-labRG** and enter unique names for **storage account name** and **File Share** and select **Create storage**. 
+
+     ![](Images/lab9/Ex0_task1_step1_2.png)
     
 1. From the Cloud Shell pane, run the following to register the Microsoft.Insights resource provider in preparation for the later exercises in this lab:
 
@@ -104,6 +108,8 @@ The main tasks for this exercise are as follows:
    ```
 
 1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301suba.json** into the Cloud Shell home directory.(**Note:- this is how you can upload files from your local machine to cloud shell pane, please skip this step for now**)
+
+    ![](Images/lab9/Ex0_task1_step3.png)
 
 1. From the Cloud Shell pane, the following command is used to create a resource group (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer): (**Note:- just go through the command, as the resource groups are pre-created**)
 
@@ -125,7 +131,7 @@ The main tasks for this exercise are as follows:
 
    ```sh
    az deployment group create \
-   --resource-group az30301a-labRG \
+   --resource-group az30301a-labRG-Deployment-id \
    --template-file azuredeploy30301rga.json \
    --parameters @azuredeploy30301rga.parameters.json
    ```
@@ -144,7 +150,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource Group | **az30301a-labRG** |
+    | Resource Group | **az30301a-labRG-Deployment-id** |
     | Virtual Network | **az30301a-vnet** |
 
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VMs in its backend pool.
@@ -156,7 +162,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30301a-labRG** |
+    | Resource group | **az30301a-labRG-Deployment-id** |
     | Virtual machine | **az30301a-vm0** |
     | Network interface | **az30301a-nic0** |
 
@@ -171,7 +177,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30301a-labRG** |
+    | Resource group | **az30301a-labRG-Deployment-id** |
     | Source type | **Virtual machine** |
     | Virtual machine | **az30301a-vm0** |
     | Destination | **Select a virtual machine** |
@@ -283,7 +289,7 @@ The main tasks for this exercise are as follows:
 
    ```sh
    az deployment group create \
-   --resource-group az30301b-labRG \
+   --resource-group az30301b-labRG-Deployment-id \
    --template-file azuredeploy30301rgb.json \
    --parameters @azuredeploy30301rgb.parameters.json
    ```
@@ -316,7 +322,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30301b-labRG** |
+    | Resource group | **az30301b-labRG-Deployment-id** |
     | Virtual machine | **az30301b-vm0** |
     | Network interface | **az30301b-nic0** |
 
@@ -333,7 +339,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30301b-labRG** |
+    | Resource group | **az30301b-labRG-Deployment-id** |
     | Source type | **Virtual machine** |
     | Virtual machine | **az30301b-vm0** |
     | Destination | **Select a virtual machine** |
@@ -715,27 +721,3 @@ The main tasks for this exercise are as follows:
 
     > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
-
-#### Task 3: Remove Azure resources deployed in the exercise
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   ```sh
-   az group list --query "[?starts_with(name,'az30301c-')]".name --output tsv
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
-
-   ```sh
-   az group list --query "[?starts_with(name,'az30301c-')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-   ```
-
-1. From the Cloud Shell pane, run the following to delete the file you uploaded earlier in this lab
-
-   ```sh
-   rm ~/azuredeploy30301suba.json
-   ```
-
-1. Close the Cloud Shell pane.
