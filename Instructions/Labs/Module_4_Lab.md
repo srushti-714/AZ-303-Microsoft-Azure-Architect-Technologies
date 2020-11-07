@@ -311,7 +311,7 @@ The main tasks for this exercise are as follows:
     | Resource Group | **az30301b-labRG-Deployment-id** |
     | Virtual Network | **az30301b-vnet** |
     
-       ![](Images/lab4/e2_t2_s3.png)
+     ![](Images/lab4/e2_t2_s3.png)
 
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VMs in its backend pool.
 
