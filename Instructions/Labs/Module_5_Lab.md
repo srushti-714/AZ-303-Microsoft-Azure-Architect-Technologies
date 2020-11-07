@@ -564,6 +564,8 @@ The main tasks for this exercise are as follows:
 
 1. In File Explorer, create a folder named **Folder1** and a text file inside the folder named **File1.txt**.
 
+    ![](Images/lab5/ex3_task2_step6_1.png)
+
 1. Switch back to the browser window displaying the Azure portal, on the **az30302a-share** blade, select **Refresh**, and verify that **Folder1** appears in the list of folders. 
 
     ![](Images/lab5/ex3_task2_step7.png)
