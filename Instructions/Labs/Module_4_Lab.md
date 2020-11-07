@@ -145,6 +145,8 @@ The main tasks for this exercise are as follows:
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource Group | **az30301a-labRG-Deployment-id** |
     | Virtual Network | **az30301a-vnet** |
+    
+   ![](Images/lab4/e1_t2_s3.png)
 
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VMs in its backend pool.
 
@@ -163,6 +165,8 @@ The main tasks for this exercise are as follows:
    
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP. 
 
+   ![](Images/lab4/e1_t2_s6.png)
+
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
 
     > **Note**: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in the same availability set.
@@ -180,16 +184,22 @@ The main tasks for this exercise are as follows:
     | Virtual machine | **az30301a-vm1** |
     | Protocol | **TCP** |
     | Destination port| **80** |
-
+    
+   ![](Images/lab4/e1_t2_s8.png)
+   
     > **Note**: You will need to wait a few minutes for the results in order for the **Azure Network Watcher Agent** VM extension to be installed on the Azure VMs.
 
 1. Review the results and note the latency of the network connection between the Azure VMs.
+
+   ![](Images/lab4/e1_t2_s9.png)
 
     > **Note**: The latency should be about 1 millisecond, since both VMs are in the same availability set (within the same Azure datacenter).
 
 1. In the Azure portal, navigate to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-avset** availability set entry, and on the **az30301a-avset** blade, note the fault domain and update domain values assigned Azure VMs.
 
 1. In the Azure portal, navigate back to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-lb** load balancer entry, and on the **az30301a-lb** blade, note the public IP address entry.
+
+   ![](Images/lab4/e1_t2_s11.png)
 
 1. In the Azure portal, start a **Bash** session in the Cloud Shell pane. 
 
@@ -198,12 +208,15 @@ The main tasks for this exercise are as follows:
    ```sh
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
-
+   ![](Images/lab4/e1_t2_s13.png)
+   
     > **Note**: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
 1. On the **az30301a-lb** blade, select the **Load balancing rules** entry and, on the **az30301a-lb \| Load balancing rules** blade, select the **az303001a-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
 
 1. On the **az303001a-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
+
+   ![](Images/lab4/e1_t2_s15.png)
 
 1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer without session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -212,8 +225,12 @@ The main tasks for this exercise are as follows:
    ```
 
     > **Note**: Verify that the returned messages indicate that the requests are being delivered to the same backend Azure VMs
-
+    
+   ![](Images/lab4/e1_t2_s16.png)
+   
 1. In the Azure portal, navigate back to the **az30301a-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively. 
+
+   ![](Images/lab4/e1_t2_s17.png)
 
 1. From the Cloud Shell pane, run the following to test Remote Desktop connectivity via NAT to the first Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -228,7 +245,8 @@ The main tasks for this exercise are as follows:
    ```sh
    curl -v telnet://<lb_IP_address>:33891
    ```
-
+   ![](Images/lab4/e1_t2_s19.png)
+   
     > **Note**: Verify that the returned message indicates that you are successfully connected. 
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt.
@@ -292,6 +310,8 @@ The main tasks for this exercise are as follows:
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource Group | **az30301b-labRG-Deployment-id** |
     | Virtual Network | **az30301b-vnet** |
+    
+       ![](Images/lab4/e2_t2_s3.png)
 
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VMs in its backend pool.
 
@@ -308,9 +328,13 @@ The main tasks for this exercise are as follows:
     | Virtual machine | **az30301b-vm0** |
     | Network interface | **az30301b-nic0** |
     
+    ![](Images/lab4/e2_t2_s5.png)
+    
    >**Note**: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
    
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP. 
+
+    ![](Images/lab4/e2_t2_s6.png)
 
     > **Note**: This listing is also practically identical to the one you viewed in the previous exercise, with network-level protection implemented by using a network security group associated with the subnet to which both Azure VMs are connected. Keep in mind, however, that the network security group is, in this case, required for the HTTP and RDP traffic to reach the backend pool Azure VMs, due to the usage of the Azure Load Balancer Standard SKU (NSGs are optional when using the Basic SKU).
 
@@ -336,6 +360,8 @@ The main tasks for this exercise are as follows:
 
 1. Review the results and note the latency of the network connection between the Azure VMs.
 
+  ![](Images/lab4/e2_t2_s9.png)
+       
     > **Note**: The latency might be slightly higher than the one you observed in the previous exercise, since the two VMs are in different zones (within different Azure datacenters).
 
 1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm0** virtual machine entry, and on the **az30301b-vm0** blade, note the **Location** and **Availability zone** entries. 
@@ -360,16 +386,21 @@ The main tasks for this exercise are as follows:
 
 1. On the **az303001b-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
 
+   ![](Images/lab4/e2_t2_s16.png)
+
 1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer without session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
    ```sh
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
-
+   ![](Images/lab4/e2_t2_s20.png)
+   
     > **Note**: Verify that the returned messages indicate that the requests are being delivered to the same backend Azure VMs
 
 1. In the Azure portal, navigate back to the **az30301b-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively. 
 
+   ![](Images/lab4/e2_t2_s18.png)
+   
 1. From the Cloud Shell pane, run the following to test Remote Desktop connectivity via NAT to the first Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
    ```sh
@@ -383,6 +414,8 @@ The main tasks for this exercise are as follows:
    ```sh
    curl -v telnet://<lb_IP_address>:33891
    ```
+  
+  ![](Images/lab4/e2_t2_s17.png)
 
     > **Note**: Verify that the returned message indicates that you are successfully connected. 
 
@@ -405,9 +438,13 @@ The main tasks for this exercise are as follows:
     | Choose by | **Maximum number of backend instances** |
     | Maximum number of backend instances | **3** |
 
+   ![](Images/lab4/e2_t2_s25.png)
+
     > **Note**: Azure Load Balancer Standard allows you to designate a dedicated frontend IP address for outbound traffic (in cases where multiple frontend IP addresses are assigned).
 
 1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm0** virtual machine entry, and on the **az30301b-vm0** blade, in the **Operations** blade, select **Run command**.
+
+   ![](Images/lab4/e2_t2_s27.png)
 
 1. On the **az30301b-vm0 \| Run command** blade, select **RunPowerShellScript**. 
 
@@ -416,7 +453,8 @@ The main tasks for this exercise are as follows:
    ```powershell
    (Invoke-RestMethod -Uri "http://ipinfo.io").IP
    ```
-
+   ![](Images/lab4/e2_t2_s28.png)
+   
     > **Note**: This command returns the public IP address from which the web request originates.
 
 1. Review the output and verify that it matches the public IP address assigned to the frontend of the Azure Load Balancer Standard, which you assigned to the outbound load balancing rule.
@@ -482,6 +520,8 @@ The main tasks for this exercise are as follows:
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource Group | **az30301c-labRG-Deployment-id** |
     | Virtual Network | **az30301c-vnet** |
+    
+   ![](Images/lab4/e3_t2_s3.png)
 
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VM instances in the Azure Virtual Machine Scale Set in its backend pool. 
 
@@ -491,7 +531,11 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, and select the **az30301c-vmss** virtual machine scale set entry. 
 
+   ![](Images/lab4/e3_t2_s5.png)
+
 1. On the **az30301c-vmss** blade, note the **Location** and **Fault domains** entries. 
+
+   ![](Images/lab4/e3_t2_s6.png)
 
     > **Note**: Unlike Azure VMs, individual instances of Azure VM scale sets deploy into separate fault domains, including instances deployed into the same zone. In addition, they support 5 fault domains (unlike Azure VMs, which can use up to 3 fault domains). 
 
@@ -503,6 +547,8 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade and, in the list of resources, select the **az30301c-appgw** load balancer entry, and on the **az30301c-appgw** blade, note the public IP address entry.
 
+   ![](Images/lab4/e3_t2_s8.png)
+
 1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane. 
 
 1. From the Cloud Shell pane, run the following to test load balancing of HTTP traffic to the Azure VM Scale Set instances in the backend pool of the Azure Application Gateway (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the gateway you identified earlier):
@@ -513,9 +559,13 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
-1. On the **az30301c-appgw** blade, select the **HTTP settings** entry and, on the **az30301c-appgw \| HTTP settings** blade, select the **appGwBackentHttpSettings** entry representing the load balancing rule handling HTTP traffic. 
+1. On the **az30301c-appgw** blade, select the **HTTP settings** entry and, on the **az30301c-appgw \| HTTP settings** blade, select the **appGwBackentHttpSettings** entry representing the load balancing rule handling HTTP traffic.
+
+   ![](Images/lab4/e3_t2_s11.png)
 
 1. On the **appGwBackentHttpSettings** blade, review the existing settings without making any changes and note that you can enable **Cookie-based affinity**.
+
+   ![](Images/lab4/e3_t2_s12.png)
 
     > **Note**: This feature requires that the client supports the use of cookies.
 
@@ -536,6 +586,8 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30301c-vmss \| Scaling** blade, select the **Custom autoscale** option.
 
+   ![](Images/lab4/e4_t1_s2.png)
+
 1. In the **Custom autoscale** section, specify the following settings (leave others with their default values):
 
     | Setting | Value | 
@@ -544,6 +596,8 @@ The main tasks for this exercise are as follows:
     | Instance limits Minimum | **1** |
     | Instance limits Maximum | **3** |
     | Instance limits Default | **1** |
+
+   ![](Images/lab4/e4_t1_s3.png)
 
 1. Select **+ Add a rule**.
 
@@ -564,6 +618,8 @@ The main tasks for this exercise are as follows:
     | Operation | **Increase count by** |
     | Instance count | **1** |
     | Cool down (minutes) | **5** |
+
+   ![](Images/lab4/e1t1s4.png)
 
     > **Note**: These values are selected strictly for lab purposes to trigger scaling as soon as possible. For guidance regarding Azure VM Scale Set scaling, refer to [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview) . 
 
@@ -587,6 +643,8 @@ The main tasks for this exercise are as follows:
     | Instance count | **1** |
     | Cool down (minutes) | **5** |
 
+   ![](Images/lab4/e1t1s5.png)
+
 1. Back on the **az30301c-vmss | Scaling** blade, select **Save**.
 
 
@@ -607,7 +665,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
-    > **Note**: You might see the number of instances increasing by 2 (rather than 1). This is expected as long as the final number of running instances is 3. 
+    > **Note**: You might see the number of instances increasing by 2 (rather than 1).
 
 1. In the Azure portal, close the **Cloud Shell** pane. 
 
@@ -641,6 +699,8 @@ The main tasks for this exercise are as follows:
 
 1. In the list of available sizes, select any available size other than currently configured and select **Resize**.
 
+   ![](Images/lab4/e5_t1_s2.png)
+
 1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of replacing existing instances with new ones of the desired size.
 
     > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
@@ -657,6 +717,8 @@ The main tasks for this exercise are as follows:
     | LUN | **0** |
     | Size | **32** |
     | Storage account type | **Standard HDD** |
+    
+   ![](Images/lab4/e5t2s2.png)
 
 1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of updating the existing instances.
 
@@ -664,11 +726,15 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
 
+   ![](Images/lab4/e5t2s3.png)
+
     > **Note**: Wait for uninstallation to complete.
 
 1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, select the storage account resource. 
 
 1. On the storage account blade, select **Containers** and then select **+ Container**. 
+
+   ![](Images/lab4/e5_t2_s5.png)
 
 1. On the **New container** blade, specify the following settings (leave others with their default values) and select **Create**:
 
@@ -676,6 +742,8 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Name | **scripts** |
     | Public access level | **Private (no anonymous access**) |
+    
+   ![](Images/lab4/e5_t2_s6.png)
     
 1. Back on the storage account blade displaying the list of containers, select **scripts**.
 
@@ -687,11 +755,20 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
 
+   ![](Images/lab4/e5st2s4.png)
+   ![](Images/lab4/e5_t2_s11.png)
+
 1. On the **New resource** blade, select **Custom Script Extension** and then select **Create**.
+
+   ![](Images/lab4/e5_t2_s12.png)
 
 1. From the **Install extension** blade, select **Browse**. 
 
+   ![](Images/lab4/e5_t2_s13.png)
+
 1. On the **Storage accounts** blade, select the name of the storage account into which you uploaded the **az30301e-configure_VMSS_with_data_disk.ps1** script, on the **Containers** blade, select **scripts**, on the **scripts** blade, select **az30301e-configure_VMSS_with_data_disk.ps1**, and then select **Select**. 
+
+   ![](Images/lab4/e5_t2_s15.png)
 
 1. Back on the **Install extension** blade, select **OK**.
 
