@@ -343,10 +343,15 @@ The main tasks for this exercise are as follows:
 
 1. Copy the value of the **Blob SAS URL** into Clipboard.
 
+    ![](Images/lab5/ex1_task6_step4.png)
+
 1. Open a new tab in the browser window and navigate to the URL you copied into Clipboard in the previous step.
+
+    ![](Images/lab5/ex1_task6_step5.png)
 
 1. Verify that the message **Hello from az30302ablob via SAS** appears in the browser window.
 
+    ![](Images/lab5/ex1_task6_step6.png)
 
 ### Exercise 2: Configure Azure Storage blob service authorization by using Azure Active Directory
   
