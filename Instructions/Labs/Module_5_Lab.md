@@ -68,15 +68,15 @@ The main tasks for this exercise are as follows:
 
 1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**.
 
-    ![](Images/lab9/ex0_task1_step3.png)
+    ![](Images/lab5/ex0_task1_step3.png)
 
 1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\02\azuredeploy30302rga.json**.
 
-    ![](Images/lab9/ex0_task1_step4.png)
+    ![](Images/lab5/ex0_task1_step4.png)
 
 1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\02\azuredeploy30302rga.parameters.json**.
 
-    ![](Images/lab9/ex0_task1_step5.png)
+    ![](Images/lab5/ex0_task1_step5.png)
 
 1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab: (**Note:- Dont Forget to change resource group name with the deployment id, Please find it from the environment details tab**)
 
