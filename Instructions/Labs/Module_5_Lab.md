@@ -83,7 +83,7 @@ The main tasks for this exercise are as follows:
    ```powershell
    New-AzResourceGroupDeployment `
      -Name az30302rgaDeployment `
-     -ResourceGroupName 'az30302a-labRG-deploymentID' `
+     -ResourceGroupName 'az30302a-labRG' `
      -TemplateFile $HOME/azuredeploy30302rga.json `
      -TemplateParameterFile $HOME/azuredeploy30302rga.parameters.json `
      -AsJob
