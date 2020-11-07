@@ -282,7 +282,7 @@ The main tasks for this exercise are as follows:
     | Allowed protocols | **HTTPS only** |
     | Signing key | **key1** |
 
-   ![](Images/lab5/ex1_task5_step1.png)
+   ![](Images/lab5/task5_step1.png)
 
 1. Select **Generate SAS and connection string**.
 
