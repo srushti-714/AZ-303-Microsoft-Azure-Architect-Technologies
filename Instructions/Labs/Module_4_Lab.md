@@ -78,8 +78,6 @@ The main tasks for this exercise are as follows:
 
 1. Analyze highly available Azure VMs deployed into an availability set behind an Azure Load Balancer Basic
 
-1. Remove Azure resources deployed in the exercise
-
 
 #### Task 1: Deploy highly available Azure VMs into an availability set behind an Azure Load Balancer Basic by using Azure Resource Manager templates
 
@@ -188,7 +186,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: The latency should be about 1 millisecond, since both VMs are in the same availability set (within the same Azure datacenter).
 
-1. In the Azure portal, navigate to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-avset** availability set entry, and on the **az30301a-avset** blade, note the fault domain and update domain values assigned the two Azure VMs.
+1. In the Azure portal, navigate to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-avset** availability set entry, and on the **az30301a-avset** blade, note the fault domain and update domain values assigned Azure VMs.
 
 1. In the Azure portal, navigate back to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-lb** load balancer entry, and on the **az30301a-lb** blade, note the public IP address entry.
 
@@ -233,25 +231,6 @@ The main tasks for this exercise are as follows:
     > **Note**: Verify that the returned message indicates that you are successfully connected. 
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt.
-
-
-#### Task 3: Remove Azure resources deployed in the exercise
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   ```sh
-   az group list --query "[?starts_with(name,'az30301a-')]".name --output tsv
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
-
-   ```sh
-   az group list --query "[?starts_with(name,'az30301a-')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-   ```
-
-1. Close the Cloud Shell pane.
 
 
 ### Exercise 2: Implement and analyze highly available Azure VM deployments using availability zones and Azure Load Balancer Standard
