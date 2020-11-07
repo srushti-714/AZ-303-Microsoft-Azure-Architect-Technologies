@@ -78,7 +78,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab5/ex0_task1_step5.png)
 
-1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab: (**Note:- Dont Forget to change resource group name with the deployment id, Please find it from the environment details tab**)
+1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab:
 
    ```powershell
    New-AzResourceGroupDeployment `
