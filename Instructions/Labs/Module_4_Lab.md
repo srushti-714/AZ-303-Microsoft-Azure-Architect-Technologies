@@ -97,7 +97,7 @@ The main tasks for this exercise are as follows:
     
     ![](Images/lab9/Ex0_task1_step1_1.png)
     
-    ii. Select existing Resource Group as **az30311a-labRG** and enter unique names for **storage account name** and **File Share** and select **Create storage**. 
+    ii. Select existing Resource Group as **az30301a-labRG-Deployment-id** and enter unique names for **storage account name** and **File Share** and select **Create storage**. 
 
      ![](Images/lab9/Ex0_task1_step1_2.png)
     
