@@ -373,7 +373,11 @@ The main tasks for this exercise are as follows:
 
 1. On the **Target** blade, select **+ Network** and select the virtual network you created in the first task of this exercise.
 
+    ![](Images/lab9/new/ex2_task2_step18.png)
+
 1. On the **Replication policy** blade, select **+ Create and Associate**. 
+
+    ![](Images/lab9/new/ex2_task2_step19.png)
 
 1. On the **Create and Associate** blade, specify the following settings (leave others with their default values) and select **OK**:
 
@@ -382,15 +386,21 @@ The main tasks for this exercise are as follows:
     | Name | **az30307c replication policy** |
     | Copy frequency | **30 seconds** |
 
+    ![](Images/lab9/new/ex2_task2_step22.png)
+    
 1. Back on the **Prepare infrastructure** blade, select **OK**.
 
-1. Back on the **az30307b-rsvault | Site Recovery** blade, in the **For on-premises machines and Azure VMs** section, select **Step 1: Replicate Application**. 
+1. Back on the **az30307b-rsvault | Site Recovery** blade, Under **Hyper-V machines to Azure** section, select **2: Enable replication**. 
 
-1. On the **Source** blade, accept the default settings and select **OK**.
+     ![](Images/lab9/new/ex2_task2_step23.png)
+
+1. On the **Source Environment** blade, accept the default settings and select **OK**.
+
+   ![](Images/lab9/new/ex2_task2_step24.png)
 
     >**Note**: If the **OK** un-select and re-select items in the drop-down lists.
 
-1. On the **Target** blade, specify the following settings (leave others with their default values) and select **OK**:
+1. On the **Target Environment** blade, specify the following settings (leave others with their default values) and select **OK**:
 
     | Setting | Value |
     | --- | --- |
@@ -402,14 +412,23 @@ The main tasks for this exercise are as follows:
     | Post-failover Azure network | **az30307c-dr-vnet** |
     | Subnet | **subnet0 (10.7.0.0/24)** |
 
-1. On the **Select virtual machines** blade, select **az30307a-vm1** and select **OK**:
+   ![](Images/lab9/new/ex2_task2_step25.png)
+ 
+1. On the **Virtual machine selection** blade, select **az30307a-vm1** and select **OK**:
+
+    ![](Images/lab9/new/ex2_task2_step26.png)
 
 1. On the **Configure properties** blade, in the **Defaults** row and **OS type** column, select **Windows** from the drop-down list and select **OK**:
 
+    ![](Images/lab9/new/ex2_task2_step27.png)
+
 1. On the **Configure replication settings** blade, accept the default settings and select **OK**:
+
+    ![](Images/lab9/new/ex2_task2_step28.png)
 
 1. Back on the **Enable replication** blade, select **Enable replication**.
 
+    ![](Images/lab9/new/ex2_task2_step29.png)
 
 #### Task 3: Review Azure VM replication settings
 
@@ -428,7 +447,7 @@ The main tasks for this exercise are as follows:
 1. On the **az30307a-vm1** replicated items blade, select **Latest recovery points** and review **Latest crash-consistent** and **Latest app-consistent** recovery points.
 
 
-#### Task 3: Perform a failover of the Hyper-V virtual machine
+#### Task 4: Perform a failover of the Hyper-V virtual machine
 
 1. Within the Remote Desktop session to **az30307a-vm0**, in the browser window displaying the Azure portal, on the **az30307a-vm1** replicated items blade, select **Test failover**. 
 
