@@ -115,6 +115,10 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, select **+ Add**.
 
+    ![](Images/lab5/ex1_task1_step1.png)
+    
+    ![](Images/lab5/ex1_task1_step1_1.png)
+
 1. On the **Basics** tab of the **Create storage account** blade, specify the following settings (leave others with their default values):
 
     | Setting | Value | 
@@ -127,14 +131,21 @@ The main tasks for this exercise are as follows:
     | Account kind | **StorageV2 (general purpose v2)** |
     | Replication | **Locally redundant storage (LRS)** |
 
+   ![](Images/lab5/ex1_task1_step2.png)
+
 1. Select **Next: Networking >**, on the **Networking** tab of the **Create storage account** blade, review the available options, accept the default option **Public endpoint (all networks}** and select **Next: Data protection >**.
 
+    ![](Images/lab5/ex1_task1_step3.png)
+
 1. On the **Data protection** tab of the **Create storage account** blade, review the available options, accept the defaults, select **Next: Advanced >**.
+
+    ![](Images/lab5/ex1_task1_step4.png)
 
 1. On the **Advanced** tab of the **Create storage account** blade, review the available options, accept the defaults, select **Review + Create**, wait for the validation process to complete and select **Create**.
 
     >**Note**: Wait for the Storage account to be created. This should take about 2 minutes.
 
+    ![](Images/lab5/ex1_task1_step5.png)
 
 #### Task 2: Install Storage Explorer
 
@@ -142,7 +153,13 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Virtual machines**, and, on the **Virtual machines** blade, in the list of virtual machines, select **az30302a-vm0**.
 
+    ![](Images/lab5/ex1_task2_step1.png)
+    
+    ![](Images/lab5/ex1_task2_step1_1.png)
+
 1. On the **az30302a-vm0** blade, select **Connect**, in the drop-down menu, select **RDP**, and then select **Download RDP File**.
+
+    ![](Images/lab5/ex1_task2_step2.png)
 
 1. When prompted, sign in with the following credentials:
 
@@ -151,9 +168,19 @@ The main tasks for this exercise are as follows:
     | User Name | **Student** |
     | Password | **Pa55w.rd1234** |
 
+   ![](Images/lab5/ex1_task2_step3.png)
+   
+   ![](Images/lab5/ex1_task2_step3_1.png)
+   
+   ![](Images/lab5/ex1_task2_step3_2.png)
+   
 1. Within the Remote Desktop session to **az30302a-vm0**, in the Server Manager window, select **Local Server**, select the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
 
-1. Within the Remote Desktop session to **az30302a-vm0**, start Internet Explorer and navigate to the download page of [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
+    ![](Images/lab5/ex1_task2_step4.png)
+
+1. Within the Remote Desktop session to **az30302a-vm0**, start Internet Explorer and navigate to the download page of [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/) or navigate to (https://azure.microsoft.com/en-us/features/storage-explorer/)
+
+    ![](Images/lab5/ex1_task2_step5.png)
 
 1. Within the Remote Desktop session to **az30302a-vm0**, download and install Azure Storage Explorer with the default settings. 
 
@@ -163,6 +190,8 @@ The main tasks for this exercise are as follows:
 1. Within the Remote Desktop session to **az30302a-vm0**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign-in by providing credentials of the user account with the Owner role in the subscription you are using in this lab.
 
 1. Navigate to the blade of the newly created storage account, select **Access keys** and review the settings of the target blade.
+
+   ![](Images/lab5/ex1_task3_step2.png)
 
     >**Note**: Each storage account has two keys which you can independently regenerate. Knowledge of the storage account name and either of the two keys provides full access to the entire storage account. 
 
@@ -181,10 +210,15 @@ The main tasks for this exercise are as follows:
     | Allowed protocols | **HTTPS only** |
     | Signing key | **key1** |
 
+   ![](Images/lab5/ex1_task3_step4.png)
+
 1. Select **Generate SAS and connection string**.
+
+    ![](Images/lab5/ex1_task3_step5.png)
 
 1. Copy the value of **Blob service SAS URL** into Clipboard.
 
+    ![](Images/lab5/ex1_task3_step6.png)
 
 #### Task 4: Create a blob container by using Azure Storage Explorer
 
