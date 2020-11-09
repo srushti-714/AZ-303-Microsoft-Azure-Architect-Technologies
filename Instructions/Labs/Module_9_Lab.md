@@ -461,6 +461,8 @@ The main tasks for this exercise are as follows:
 
 1. Wait until the status changes to **Protected**. This might take additional 15 minutes.
 
+    ![](Images/lab9/new2/ex2_task3_step5.png)
+
 1. On the **az30307a-vm1** replicated items blade, select **Latest recovery points** and review **Latest crash-consistent** and **Latest app-consistent** recovery points.
 
 
