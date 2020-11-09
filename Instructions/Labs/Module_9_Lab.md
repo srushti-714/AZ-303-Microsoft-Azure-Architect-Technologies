@@ -440,10 +440,16 @@ The main tasks for this exercise are as follows:
 1. Back on the **Enable replication** blade, select **Enable replication**.
 
     ![](Images/lab9/new/ex2_task2_step29.png)
+    
+    ![](Images/lab9/new2/ex2_task2_step22_1.png)
+    
+    ![](Images/lab9/new2/ex2_task2_step22_2.png)
 
 #### Task 3: Review Azure VM replication settings
 
-1. In the Azure portal, navigate back to the **az30307b-rsvault** blade and select **Replicated items**. 
+1. In the Azure portal, navigate back to the **az30307b-rsvault** blade and select **Replicated items** which comes under protected items in the left navigation pane. 
+
+    ![](Images/lab9/new2/ex2_task3_step1.png)
 
 1. On the **az30307b-rsvault | Replicated items** blade, ensure that there is an entry representing the **az30307a-vm1** virtual machine and verify that its **Replication Health** is listed as **Healthy** and that its **Status** is listed as **Enabling protection**.
 
