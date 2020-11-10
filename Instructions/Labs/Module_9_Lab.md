@@ -471,6 +471,8 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30307a-vm0**, in the browser window displaying the Azure portal, on the **az30307a-vm1** replicated items blade, select **Test failover**. 
 
+    ![](Images/lab9/new2/ex2_task4_step1.png)
+
 1. On the **Test failover** blade, specify the following settings (leave others with their default values) and select **OK**:
 
     | Setting | Value |
@@ -478,14 +480,21 @@ The main tasks for this exercise are as follows:
     | Choose a recovery point | the default option | 
     | Azure virtual network | **az30307c-test-vnet** | 
 
+   ![](Images/lab9/new2/ex2_task4_step2.png)
 
 1. In the Azure portal, navigate back to the **az30307b-rsvault** blade and select **Site Recovery jobs**. Wait until the status of the **Test failover** job is listed as **Successful**.
 
 1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, note the entry representing the newly provisioned virtual machine **az30307a-vm1-test**.
 
-1. In the Azure portal, navigate back to the on the **az30307a-vm1** replicated items blade and select **Cleanup test failover*.
+    ![](Images/lab9/new2/ex2_task4_step4.png)
+
+1. In the Azure portal, navigate back to the on the **az30307a-vm1** replicated items blade and select **Cleanup test failover**.
+
+    ![](Images/lab9/new2/ex2_task4_step5.png)
 
 1. On the **Test failover cleanup** blade, select the checkbox **Testing is complete. Delete test failover virtual machine(s)** and select **OK**.
+
+    ![](Images/lab9/new2/ex2_task4_step6.png)
 
 1. Once the test failover cleanup job completes, refresh the browser page displaying the **az30307a-vm1** replicated items blade and note that you have the option to perform planned and unplanned failover.
 
