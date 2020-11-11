@@ -117,7 +117,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/new/ex0_task2_step10_1.png)
     
-    **Enter the details and Continue**
+    i) **Enter the details and Continue**
     ![](Images/lab9/new/ex0_task2_step10_2.png)
     
     ![](Images/lab9/Ex0_task2_step7_2.png)
