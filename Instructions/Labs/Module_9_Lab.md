@@ -65,7 +65,7 @@ The main tasks for this exercise are as follows:
     | Host Admin Username | **Student** |
     | Host Admin Password | **Pa55w.rd1234** |
 
-1. On the **Hyper-V Host Virtual Machine with nested VMs** blade, select the checkbox **I agree to the terms and conditions above** and select **Purchase**.
+1. On the **Hyper-V Host Virtual Machine with nested VMs** blade, select **Review + Create** and then select **Create**.
 
     > **Note**: Wait for the deployment to complete. The deployment might take about 10 minutes.
 
@@ -342,7 +342,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex2_task2_step5.png)
 
-1. Back on the **Prepare source** blade, select **+ Hyper-V Server**. 
+1. Back on the **Prepare source** blade, select **Add Hyper-V Server**. 
 
     >**Note**: You might have to refresh the browser page. 
 
@@ -376,13 +376,11 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex2_task2_step17.png)
 
-1. Refresh the page displaying the Azure portal and repeat the sequence of steps until you reach the **Prepare source** blade. Ensure that both Hyper-V site and Hyper-V server have been added and select **OK**.
+1. Refresh the page displaying the Azure portal and repeat the sequence of steps until you reach the **Prepare source** blade. Ensure that both Hyper-V site and Hyper-V server have been added and select **Next**.
 
     ![](Images/lab9/Ex2_task2_step18.png)
 
-1. On the **Target** blade, select **+ Storage account** and select the storage account you created in the first task of this exercise.
-
-1. On the **Target** blade, select **+ Network** and select the virtual network you created in the first task of this exercise.
+1. On the **Target** blade, notice the storage account and the virtual network you created in the first task of this exercise will be selected automatically.
 
     ![](Images/lab9/new/ex2_task2_step18.png)
 
@@ -390,7 +388,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/new/ex2_task2_step19.png)
 
-1. On the **Create and Associate** blade, specify the following settings (leave others with their default values) and select **OK**:
+1. On the **Create and Associate** blade, specify the following settings (leave others with their default values) and select **Next**:
 
     | Setting | Value |
     | --- | --- |
@@ -399,19 +397,17 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/new/ex2_task2_step22.png)
     
-1. Back on the **Prepare infrastructure** blade, select **OK**.
+1. Back on the **Prepare infrastructure** blade, select **Next**.
 
 1. Back on the **az30307b-rsvault | Site Recovery** blade, Under **Hyper-V machines to Azure** section, select **2: Enable replication**. 
 
      ![](Images/lab9/new/ex2_task2_step23.png)
 
-1. On the **Source Environment** blade, accept the default settings and select **OK**.
+1. On the **Source Environment** blade, accept the default settings and select **Next**.
 
    ![](Images/lab9/new/ex2_task2_step24.png)
 
-    >**Note**: If the **OK** un-select and re-select items in the drop-down lists.
-
-1. On the **Target Environment** blade, specify the following settings (leave others with their default values) and select **OK**:
+1. On the **Target Environment** blade, specify the following settings (leave others with their default values) and select **Next**:
 
     | Setting | Value |
     | --- | --- |
@@ -425,15 +421,15 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab9/new/ex2_task2_step25.png)
  
-1. On the **Virtual machine selection** blade, select **az30307a-vm1** and select **OK**:
+1. On the **Virtual machine selection** blade, select **az30307a-vm1** and select **Next**:
 
     ![](Images/lab9/new/ex2_task2_step26.png)
 
-1. On the **Configure properties** blade, in the **Defaults** row and **OS type** column, select **Windows** from the drop-down list and select **OK**:
+1. On the **Configure properties** blade, in the **Defaults** row and **OS type** column, select **Windows** from the drop-down list and select **Next**:
 
     ![](Images/lab9/new/ex2_task2_step27.png)
 
-1. On the **Configure replication settings** blade, accept the default settings and select **OK**:
+1. On the **Configure replication settings** blade, accept the default settings and select **Next**:
 
     ![](Images/lab9/new/ex2_task2_step28.png)
 
