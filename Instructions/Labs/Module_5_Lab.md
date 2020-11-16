@@ -479,7 +479,7 @@ The main tasks for this exercise are as follows:
     ![](Images/lab5/ex2_task3_step6_1.png)
     
     iv)You wil receive a message **login succeeded**
-    ![](Images/lab5/)
+    ![](Images/lab5/ex2_task3_step6_2.png)
 
 1. Once you successfully authenticated, from the Windows PowerShell prompt, run the following to create a file you will upload to **container1**:
 
@@ -527,9 +527,6 @@ The main tasks for this exercise are as follows:
 1. Create an Azure Storage file share
 
 1. Map a drive to an Azure Storage file share from Windows
-
-1. Remove Azure resources deployed in the lab
-
 
 #### Task 1: Create an Azure Storage file share
 
