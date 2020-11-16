@@ -507,7 +507,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab5/ex2_task3_step13.png)
 
-1. Switch back to the Windows PowerShell prompt and re-run the following command to verify that now you can access the uploaded blob anonymously (replace the `<storage_account_name>` placeholder with the value of the storage account you noted in the previous task): (**May see some errors but it is expected and please continue**)
+1. Switch back to the Windows PowerShell prompt and re-run the following command to verify that now you can access the uploaded blob anonymously (replace the `<storage_account_name>` placeholder with the value of the storage account you noted in the previous task): 
 
    ```powershell
    Invoke-WebRequest -Uri 'https://<storage_account_name>.blob.core.windows.net/container1/az30302bblob.html'
