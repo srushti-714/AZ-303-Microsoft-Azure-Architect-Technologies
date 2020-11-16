@@ -335,7 +335,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **container1** blade, select **az30302ablob.html**.
 
-1. On the **az30302ablob.html** blade, select **Generate SAS**, review the available options without modifying them, and then select **Generate SAS token and URL**.
+1. On the az30302ablob.html blade, right click on the file name and in the popup menu, select Generate SAS, review the available options without modifying them, and then select Generate SAS token and URL.
 
     ![](Images/lab5/ex1_task6_step3.png)
     
