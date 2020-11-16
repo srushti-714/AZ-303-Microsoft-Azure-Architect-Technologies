@@ -123,6 +123,9 @@ The main tasks for this exercise are as follows:
     ![](Images/lab9/Ex0_task2_step7_2.png)
     
     ![](Images/lab9/new/ex0_task2_step10_3.png)
+    
+    ii)**Moved from downloads to F:\VHDs**
+    ![](Images/lab5/az303.png)
 
 1. Within the Remote Desktop session to **az30307a-hv-vm**, start **Hyper-V Manager**. 
 
