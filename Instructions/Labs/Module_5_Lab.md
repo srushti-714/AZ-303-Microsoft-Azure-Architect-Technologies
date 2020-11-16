@@ -303,7 +303,7 @@ The main tasks for this exercise are as follows:
    ```
 
    ![](Images/lab5/ex1_task5_step6.png)
-1. From the Cloud Shell pane, run the following to upload the newly created file as a blob into container1 of the Azure Storage account you created earlier in this exercise (replace the `<sas_token>` placeholder with the value of the shared access signature you copied to Clipboard earlier in this task):(**Please check the storage account and confirm it is the one you created in Exercise 1 -> Task 1: Create an Azure Storage account**)
+1. From the Cloud Shell pane, run the following to upload the newly created file as a blob into container1 of the Azure Storage account you created earlier in this exercise (replace the `<sas_token>` placeholder with the value of the shared access signature you copied to Clipboard earlier in this task):(**Please check the storage account and confirm it is the one you created in Exercise 1 -> Task 1: Create an Azure Storage account and please do not use the storage account created in exercise 0 here**)
 
    ```powershell
    $storageAccountName = "replace here with the storage account name you created in exercise 1 -> task 1 -> step 2"
