@@ -479,7 +479,7 @@ The main tasks for this exercise are as follows:
     ![](Images/lab5/ex2_task3_step6_1.png)
     
     iv)You wil receive a message **login succeeded**
-    ![](Images/lab5/ex2_task3_step6_2.png)
+    ![](Images/lab5/)
 
 1. Once you successfully authenticated, from the Windows PowerShell prompt, run the following to create a file you will upload to **container1**:
 
