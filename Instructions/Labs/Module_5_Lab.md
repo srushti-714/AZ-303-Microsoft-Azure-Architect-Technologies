@@ -512,7 +512,6 @@ The main tasks for this exercise are as follows:
    ```powershell
    Invoke-WebRequest -Uri 'https://<storage_account_name>.blob.core.windows.net/container1/az30302bblob.html'
    ```
-  ![](Images/lab5/ex2_task3_step14.png)
 
 ### Exercise 3: Implement Azure Files.
   
