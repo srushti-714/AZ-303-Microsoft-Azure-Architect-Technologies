@@ -397,7 +397,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/new/ex2_task2_step22.png)
     
-1. Back on the **Prepare infrastructure** blade, select **Next**.
+1. Back on the **Prepare infrastructure** blade, select **Prepare**.
 
 1. Back on the **az30307b-rsvault | Site Recovery** blade, Under **Hyper-V machines to Azure** section, select **2: Enable replication**. 
 
