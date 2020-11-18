@@ -523,6 +523,8 @@ The main tasks for this exercise are as follows:
    Invoke-WebRequest -Uri 'https://<storage_account_name>.blob.core.windows.net/container1/az30302bblob.html'
    ```
 
+  ![](Images/lab5/ex2_tsk3_stp10.png)
+
 1. Within the Remote Desktop session to **az30302a-vm0**, in the browser window, navigate back to **container1**.
 
 1. On the **container1** blade, verify that **az30302bblob.html** appears in the list of blobs.
