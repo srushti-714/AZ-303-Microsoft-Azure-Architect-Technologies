@@ -67,9 +67,11 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task1_step1_1.png)
     
-1. Select **Use existing** under Resource Group then select **az30302a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**. You can find the Deployment-id from the environment details tab.
+1. Select **Use existing** under Resource Group then select **az30302a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**. 
     
    ![](Images/lab5/ex0_task1_step3.2.png)
+
+   >**Note**: You can find the Deployment-id from the environment details tab.
 
 1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**.
 
@@ -129,13 +131,15 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | the name of a new resource group **az30302a-labRG** |
-    | Storage account name | any globally unique name between 3 and 24 in length consisting of letters and digits, For eg: **azstore**deploymentID |
+    | Storage account name | any globally unique name between 3 and 24 in length consisting of letters and digits, For eg: **azstore**Deployment-ID |
     | Location | the name of an Azure region where you can create an Azure Storage account  |
     | Performance | **Standard** |
     | Account kind | **StorageV2 (general purpose v2)** |
     | Replication | **Locally redundant storage (LRS)** |
 
    ![](Images/lab5/ex1_task1_step2.png)
+   
+   >**Note**: You can find the Deployment-id from the environment details tab.
 
 1. Select **Next: Networking >**, on the **Networking** tab of the **Create storage account** blade, review the available options, accept the default option **Public endpoint (all networks}** and select **Next: Data protection >**.
 
@@ -165,20 +169,24 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab5/ex1_task2_step2.png)
 
-1. When prompted, sign in with the following credentials:
+1. Open the downloaded RDP file and click on connect.
+
+   ![](Images/lab5/ex1_task2_step3.png)
+   
+   When prompted, sign in with the following credentials:
 
     | Setting | Value | 
     | --- | --- |
     | User Name | **Student** |
     | Password | **Pa55w.rd1234** |
 
-   ![](Images/lab5/ex1_task2_step3.png)
-   
    ![](Images/lab5/ex1_task2_step3_1.png)
+   
+   When the below pop-up comes, select **Yes** 
    
    ![](Images/lab5/ex1_task2_step3_2.png)
    
-1. Within the Remote Desktop session to **az30302a-vm0**, in the Server Manager window, select **Local Server**, select the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
+1. Within the Remote Desktop session to **az30302a-vm0**, in the Server Manager window, select **Local Server**, select the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options and click on **Ok**.
 
     ![](Images/lab5/ex1_task2_step4.png)
 
@@ -191,15 +199,17 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Generate an account-level shared access signature
 
-1. Within the Remote Desktop session to **az30302a-vm0**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign-in by providing credentials of the user account with the Owner role in the subscription you are using in this lab.
+1. Within the Remote Desktop session to **az30302a-vm0**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign-in into the Azure portal using the providing credentials .
 
-1. Navigate to the blade of the newly created storage account, select **Access keys** and review the settings of the target blade.
+   >**Note**: You can find the Azure Credentials from the environment details tab.
+
+1. Navigate to the blade of the newly created storage account**azstoreDeployment-ID**, select **Access keys** and review the settings of the target blade.
 
    ![](Images/lab5/ex1_task3_step2.png)
 
     >**Note**: Each storage account has two keys which you can independently regenerate. Knowledge of the storage account name and either of the two keys provides full access to the entire storage account. 
 
-1. On the storage account blade, select **Shared access signature** and review the settings of the target blade.
+1. On the storage account blade, select **Shared access signature** under **Settings** and review the settings of the target blade.
 
 1. On the resulting blade, specify the following settings (leave others with their default values):
 
