@@ -61,16 +61,19 @@ The main tasks for this exercise are as follows:
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
-    ![](Images/lab5/ex0_task1_step3.1.png)
+   ![](Images/lab5/ex0_task1_step3.1.png)
 
-     >**Note**: If this is the first time you are starting **Cloud Shell** and you will be presented with the **You have no storage mounted** page, click on Show advanced settings.
+1. If this is the first time you are starting **Cloud Shell** and you will be presented with the **You have no storage mounted** page, select the subscription and click on Show advanced settings.
 
     ![](Images/lab9/Ex0_task1_step1_1.png)
     
-    Select existing Resource Group as az30302a-labRG and enter shellstorageDeployment-id for storage account name and Enter filestorageDeployment-id. You can find the Deployment-id from the environment details tab.
+1. Select **Use existing** under Resource Group then select **az30302a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**. You can find the Deployment-id from the environment details tab.
     
+   ![](Images/lab5/ex0_task1_step3.2.png)
 
 1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**.
+
+    ![](Images/lab9/Ex0_task1_step3.png)
 
 1. From the Cloud Shell pane, upload the file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\02\\azuredeploy30302rga.json** into the Cloud Shell home directory.
 
