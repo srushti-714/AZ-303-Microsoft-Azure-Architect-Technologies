@@ -250,6 +250,8 @@ The main tasks for this exercise are as follows:
 
 1. In the **Connection Summary** window, select **Connect**. 
 
+   ![](Images/lab5/ex1_task4_step3_3.png)
+
 1. In the Azure Storage Explorer window, in the **EXPLORER** pane, navigate to the **az30302a-blobs** entry, expand it and note that you have access to **Blob Container** endpoint only. 
 
     ![](Images/lab5/ex1_task4_step5.png)
