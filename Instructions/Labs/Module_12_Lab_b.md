@@ -93,14 +93,12 @@ The main tasks for this exercise are as follows:
    export LOCATION='<Azure region>'
    ```
 
-6. From the Cloud Shell pane, run the following to create a resource group that will host all resources that you will provision in this lab:
+6. From the Cloud Shell pane, run the following to create a variable storing the value of resource group that will host all resources that you will provision in this lab:
 
-` Note : replace the Deployment-id with your deploymnet id given in environment detail page`
+` Note : Replace the Deployment-id with your deploymnet id given in environment detail page`
 
    ```sh
    export RESOURCE_GROUP_NAME='az30309a-labRG-Deployment-ID'
-
-   az group create --name "${RESOURCE_GROUP_NAME}" --location "$LOCATION"
    ```
 
 7. From the Cloud Shell pane, run the following to create an Azure Storage account that will host container with blobs to be processed by the Azure function:
@@ -187,7 +185,7 @@ The main tasks for this exercise are as follows:
 
 2. From the Cloud Shell pane, run the following to repopulate variables that you used in the previous task:
 
-` Note : replace the Deployment-id with your deploymnet id given in environment detail page`
+` Note : Replace the Deployment-id with your deployment id given in environment detail page`
 
    ```sh
    export RESOURCE_GROUP_NAME='az30309a-labRG-Deploymentid'
@@ -257,7 +255,7 @@ The main tasks for this exercise are as follows:
 
 4. From the Cloud Shell pane, run the following to identify the Azure region hosting the target resource group and its existing resources: 
 
-` Note : replace the Deployment-id with your deploymnet id given in environment detail page`
+` Note : Replace the Deployment-id with your deploymnet id given in environment detail page`
 
    ```sh
    export RESOURCE_GROUP_NAME_EXISTING='az30309a-labRG-Deployment-id'
