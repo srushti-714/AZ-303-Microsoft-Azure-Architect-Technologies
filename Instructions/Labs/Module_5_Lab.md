@@ -338,7 +338,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **container1** blade, verify that **az30302ablob.html** appears in the list of blobs. **If not able to find please refresh and check**
 
-    ![](Images/lab5/ex1_task5_step12.png)
+    ![](Images/lab5/ex5_tsk5_stp12.png)
 
 #### Task 6: Access a blob by using a blob-level shared access signature
 
