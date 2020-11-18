@@ -45,55 +45,6 @@ Estimated Time: 90 minutes
 -  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\\02\\azuredeploy30302rga.parameters.json
 
 
-### Exercise 0: Prepare the lab environment
-
-The main tasks for this exercise are as follows:
-
- 1. Deploy an Azure VM by using an Azure Resource Manager template
-
-
-#### Task 1: Deploy an Azure VM by using an Azure Resource Manager template
-
-1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
-
-    ![](Images/lab9/Ex0_task1_step1.png)
-
-1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
-
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**.
-
-    ![](Images/lab9/Ex0_task1_step1_1.png)
-    
-    ![](Images/lab9/Ex0_task1_step1_2.png)
-
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**.
-
-    ![](Images/lab5/ex0_task1_step3.png)
-
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\02\azuredeploy30302rga.json**.
-
-    ![](Images/lab5/ex0_task1_step4.png)
-
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\02\azuredeploy30302rga.parameters.json**.
-
-    ![](Images/lab5/ex0_task1_step5.png)
-
-1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab:
-
-   ```powershell
-   New-AzResourceGroupDeployment `
-     -Name az30302rgaDeployment `
-     -ResourceGroupName 'az30302a-labRG' `
-     -TemplateFile $HOME/azuredeploy30302rga.json `
-     -TemplateParameterFile $HOME/azuredeploy30302rga.parameters.json `
-     -AsJob
-   ```
-
-    > **Note**: Do not wait for the deployment to complete but instead proceed to the next exercise. The deployment should take less than 5 minutes.
-
-1. In the Azure portal, close the **Cloud Shell** pane. 
-
-
 ### Exercise 1: Configure Azure Storage account authorization by using shared access signature.
   
 The main tasks for this exercise are as follows:
@@ -292,7 +243,16 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
-1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
+    ![](Images/lab9/Ex0_task1_step1.png)
+
+1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
+
+    >**Note**: If this is the first time you are starting **Cloud Shell** and you will be presented with the **You have no storage mounted** page, click on Show advanced settings.
+
+    ![](Images/lab9/Ex0_task1_step1_1.png)
+    
+    Select existing Resource Group as az30302a-labRG and enter shellstorageDeployment-id for storage account name and Enter filestorageDeployment-id. You can find the Deployment-id from the environment details tab.
+    
 
 1. From the Cloud Shell pane, run the following to create a file and add a line of text into it:
 
