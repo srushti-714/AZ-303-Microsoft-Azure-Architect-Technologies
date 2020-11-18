@@ -159,7 +159,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Create a custom RBAC role in an Azure AD tenant
 
-1. On the lab computer, open the file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\roledefinition30311.json** and review its content:
+1. On the lab computer, open the file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\11\\roledefinition30311.json** and review its content and change the Name to **Virtual Machine Operator Deployment-id (Custom)** 
 
    ```json
    {
@@ -179,6 +179,8 @@ The main tasks for this exercise are as follows:
       ]
    }
    ```
+   
+   >**Note** : Make sure to replace the Deployment-id. You can find the Deployment-id from the environment details page.
 
 1. On the lab computer, in the browser window displaying the Azure portal, start a **PowerShell** session within the **Cloud Shell**. 
 
@@ -206,8 +208,10 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to verify that the role was created successfully:
 
    ```powershell
-   Get-AzRoleDefinition -Name 'Virtual Machine Operator (Custom)'
+   Get-AzRoleDefinition -Name 'Virtual Machine Operator Deployment-id (Custom)'
    ```
+   
+    >**Note** :Make sure to replace the Deployment-id. You can find the Deployment-id from the environment details page.
 
 1. Close the Cloud Shell pane.
 
