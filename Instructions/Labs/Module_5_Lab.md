@@ -66,26 +66,16 @@ The main tasks for this exercise are as follows:
     Select existing Resource Group as az30302a-labRG and enter shellstorageDeployment-id for storage account name and Enter filestorageDeployment-id. You can find the Deployment-id from the environment details tab.
     
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\02\\azuredeploy30302suba.json** into the Cloud Shell home directory.
+1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**.
 
-1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer):
+1. From the Cloud Shell pane, upload the file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\02\\azuredeploy30302rga.json** into the Cloud Shell home directory.
 
-   ```powershell
-   $location = '<Azure region>'
-   New-AzSubscriptionDeployment `
-     -Location $location `
-     -Name az30302subaDeployment `
-     -TemplateFile $HOME/azuredeploy30302suba.json `
-     -rgLocation $location `
-     -rgName 'az30302a-labRG'
-   ```
-
-      > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
-
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\02\\azuredeploy30302rga.json**.
+   ![](Images/lab5/ex0_task1_step4.png)
 
 1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\\AllFiles\\AZ-303-Microsoft-Azure-Architect-Technologies-master\\AllFiles\\Labs\\02\\azuredeploy30302rga.parameters.json**.
 
+   ![](Images/lab5/ex0_task1_step5.png)
+   
 1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab:
 
    ```powershell
