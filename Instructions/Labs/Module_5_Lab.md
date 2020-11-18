@@ -527,7 +527,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **container1** blade, verify that **az30302bblob.html** appears in the list of blobs.
 
-    ![](Images/lab5/ex2_task3_step12.png)
+    ![](Images/lab5/ex2_tsk3_stp12.png)
 
 1. On the **container1** blade, select **Change access level**, set the public access level to **Blob (anonymous read access for blobs only)** and select **OK**. 
 
