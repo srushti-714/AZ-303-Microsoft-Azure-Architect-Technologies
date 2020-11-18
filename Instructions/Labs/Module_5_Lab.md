@@ -57,7 +57,11 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
+   ![](Images/lab5/ex0_task1_step2.png)
+
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
+
+    ![](Images/lab5/ex0_task1_step3.1.png)
 
      >**Note**: If this is the first time you are starting **Cloud Shell** and you will be presented with the **You have no storage mounted** page, click on Show advanced settings.
 
