@@ -401,19 +401,26 @@ The main tasks for this exercise are as follows:
    $passwordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
    $passwordProfile.Password = 'Pa55w.rd1234'
    $passwordProfile.ForceChangePasswordNextLogin = $false
-   New-AzureADUser -AccountEnabled $true -DisplayName 'az30302auser1' -PasswordProfile $passwordProfile -MailNickName 'az30302auser1' -UserPrincipalName "az30302auser1@$domainName"
+   New-AzureADUser -AccountEnabled $true -DisplayName 'aduserDeployment-id' -PasswordProfile $passwordProfile -MailNickName 'aduserDeployment-id' -UserPrincipalName "aduserDeployment-id@$domainName"
    ```
-
+   
+   ![](Images/az303-07-01.png)
+   
+    > **Note**: Make sure to replace the Deployment-id. You can find the deployment-id from the environment detail page
+    
 1. From the Cloud Shell pane, run the following to identify the user principal name of the newly created Azure AD user:
 
    ```powershell
-   (Get-AzureADUser -Filter "MailNickName eq 'az30302auser1'").UserPrincipalName
+   (Get-AzureADUser -Filter "MailNickName eq 'aduserDeployment-id'").UserPrincipalName
    ```
+      ![](Images/az303-07-02.png)
+    
+    > **Note**: Make sure you replace the value of Deployment-id. You can find the deployment-id from the environment detail page
 
 1. Note the user principal name. You will need it later in this exercise. 
 
     ![](Images/lab5/ex2_task1_step6.png)
-
+    
 1. Close the Cloud Shell pane.
 
 
@@ -439,13 +446,17 @@ The main tasks for this exercise are as follows:
 
     >**Note**: Write down the name of the storage account. You will need it in the next task.
 
-1. On the **Add role assignment** blade, in the **Role** drop-down list, select **Storage Blob Data Owner**, ensure that the **Assign access to** drop-down list entry is set to **Azure AD user, group, or service principal**, select both your user account and the user account you created in the previous task from the list displayed below the **Select** text box, and select **Save**.
+1. On the **Add role assignment** blade, in the **Role** drop-down list, select **Storage Blob Data Owner**, ensure that the **Assign access to** drop-down list entry is set to **Azure AD user, group, or service principal**, select both your user account and the user account **aduserDeployment-id** you created in the previous task from the list displayed below the **Select** text box, and select **Save**.
 
     ![](Images/lab5/ex2_task2_step5.png)
     
     ![](Images/lab5/ex2_task2_step5_1.png)
 
 1. Navigate back to the **container1** blade and verify that you can see the content of the container.
+
+    ![](Images/lab5/ex2_task2_step6.png)
+    
+    ![](Images/lab5/ex2_task2_step6_1.png)
 
 #### Task 3: Upload a file to a blob container by using AzCopy
 
