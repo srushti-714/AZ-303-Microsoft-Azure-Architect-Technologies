@@ -456,10 +456,6 @@ The main tasks for this exercise are as follows:
 
 1. Navigate back to the **container1** blade and verify that you can see the content of the container.
 
-    ![](Images/lab5/ex2_task2_step6.png)
-    
-    ![](Images/lab5/ex2_task2_step6_1.png)
-
 #### Task 3: Upload a file to a blob container by using AzCopy
 
 1. Within the Remote Desktop session to **az30302a-vm0**, in the browser window, navigate to [Get started with AzCopy](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10) or navigate to (https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10).
