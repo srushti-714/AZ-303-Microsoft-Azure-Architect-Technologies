@@ -224,7 +224,7 @@ The main tasks for this exercise are as follows:
     | Allowed protocols | **HTTPS only** |
     | Signing key | **key1** |
 
-   ![](Images/lab5/ex1_task3_step4.png)
+   ![](Images/lab5/ex1_tsk3_stp4.png)
 
 1. Select **Generate SAS and connection string**.
 
@@ -290,8 +290,8 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Allowed services | **Blob** |
-    | Allowed resource types | **Object** |
-    | Allowed permissions | **Read**, **Create** |
+    | Allowed resource types | **Service**, **Container**, **Object** |
+    | Allowed permissions | **Read**, **Write**, **Delete**, **List**, **Add**, **Create** |
     | Blob versioning permissions | disabled |
     | Start | 24 hours before the current time in your current time zone | 
     | End | 24 hours after the current time in your current time zone |
