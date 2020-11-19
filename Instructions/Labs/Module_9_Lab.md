@@ -170,7 +170,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Virtual Machine Connection window to **az30307a-vm1**, on the **License terms** page, select **Accept**. 
 
-1. In the Virtual Machine Connection window to **az30307a-vm1**, on the **Customize settings** page, set the password of the built-in Administrator account to **Pa55w.rd1234** and select **Finish**. 
+1. In the Virtual Machine Connection window to **az30307a-vm1**, on the **Customize settings** page, set the password of the built-in Administrator account to **Pa55w.rd1234** , please type the password and select **Finish**. 
 
     ![](Images/lab9/new/ex0_task2_step24.png)
 
