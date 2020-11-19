@@ -51,7 +51,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/new/ex0_task1_step2.png)
 
-1. On the **Hyper-V Host Virtual Machine with nested VMs** blade in the Azure portal, specify the following settings (leave others with their default values):
+1. On the **Hyper-V Host Virtual Machine with nested VMs** blade in the Azure portal, specify the following settings (**leave others with their default values**):
 
     | Setting | Value | 
     | --- | --- |
