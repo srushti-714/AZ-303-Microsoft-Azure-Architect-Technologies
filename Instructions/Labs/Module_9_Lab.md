@@ -346,7 +346,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex2_task2_step5.png)
 
-1. Back on the **Prepare source** blade, select **Add Hyper-V Server**. 
+1. Back on the **Prepare infrastructure** blade, select **Add Hyper-V Server**. 
 
     >**Note**: You might have to refresh the browser page. 
 
