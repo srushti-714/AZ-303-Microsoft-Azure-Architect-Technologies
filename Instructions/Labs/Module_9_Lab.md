@@ -332,7 +332,7 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30307a-hv-vm**, in the Azure portal, on the **az30307b-rsvault** blade, in the **Getting started** section, select **Site Recovery**
 
-1. On the **az30307b-rsvault | Site Recovery** blade, select **Prepare infrastructure** ,Under Hyper-V machines to Azure. 
+1. On the **az30307b-rsvault | Site Recovery** blade, select **Prepare infrastructure**, Under Hyper-V machines to Azure. 
 
     ![](Images/lab9/Ex2_task2_step2.png)
 
