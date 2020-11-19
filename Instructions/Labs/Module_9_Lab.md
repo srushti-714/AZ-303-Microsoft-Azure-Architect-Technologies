@@ -99,7 +99,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task2_step6.png)
 
-1. When prompted, sign in with the following credentials:
+1. Open the RDP file, and when prompted sign in with the following credentials:
 
     - User Name: **Student**
 
