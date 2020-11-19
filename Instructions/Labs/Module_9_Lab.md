@@ -144,7 +144,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Name | **az30307a-vm1** | 
     | Store the virtual machine in a different location | selected | 
-    | Location | **F:\VMs** |
+    | Location | **F:\VMs\** |
 
     ![](Images/lab9/Ex0_task2_step7_6.png)
 
