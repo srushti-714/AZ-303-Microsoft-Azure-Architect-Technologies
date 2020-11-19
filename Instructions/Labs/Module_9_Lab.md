@@ -449,13 +449,13 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate back to the **az30307b-rsvault** blade and select **Replicated items** which comes under protected items in the left navigation pane. 
 
-    ![](Images/lab9/new2/ex2_task3_step1.png)
-
 1. On the **az30307b-rsvault | Replicated items** blade, ensure that there is an entry representing the **az30307a-vm1** virtual machine and verify that its **Replication Health** is listed as **Healthy** and that its **Status** is listed as **Enabling protection**.
 
     > **Note**: You might need to wait a few minutes until the **az30307a-vm1** entry appears on the **az30307b-rsvault - Replicated items** blade.
 
 1. On the **az30307b-rsvault - Replicated items** blade, select the **az30307a-vm1** entry.
+
+    ![](Images/lab9/new2/ex2_task3_step1.png)
 
 1. On the **az30307a-vm1** replicated items blade, review the **Health and status**, **Failover readiness**, **Latest recovery points**, and **Infrastructure view** sections. Note the **Planned Failover**, **Failover** and **Test Failover** toolbar icons.
 
