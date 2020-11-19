@@ -122,6 +122,7 @@ The main tasks for this exercise are as follows:
     
     ![](Images/lab9/Ex0_task2_step7_2.png)
     
+    ii) **Click Save and find the file in Downloads**
     ![](Images/lab9/new/ex0_task2_step10_3.png)
     
     ii)**Moved from downloads to F:\VHDs**
