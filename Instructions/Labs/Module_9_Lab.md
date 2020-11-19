@@ -85,7 +85,7 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value | 
     | --- | --- |
-    | Destination port range | **3389** |
+    | Destination port ranges | **3389** |
     | Protocol | **Any** |
     | Name | **AllowRDPInBound** |
 
