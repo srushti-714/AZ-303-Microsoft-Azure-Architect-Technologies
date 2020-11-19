@@ -392,7 +392,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/new/ex2_task2_step19.png)
 
-1. On the **Create and Associate** blade, specify the following settings (leave others with their default values) and select **Next**:
+1. On the **Create and Associate** blade, specify the following settings (leave others with their default values) , click **OK** and select **Next** after it shows something similar in the below image:
 
     | Setting | Value |
     | --- | --- |
