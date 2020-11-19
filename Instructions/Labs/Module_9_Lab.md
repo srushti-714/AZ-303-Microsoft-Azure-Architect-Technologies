@@ -336,7 +336,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex2_task2_step2.png)
 
-1. On the **Deployment planning** blade, in the drop-down list labeled **Have you completed deployment planning?**, select **Yes, I have done it** and select **OK**:
+1. On the **Deployment planning** blade, in the drop-down list labeled **Deployment Planning Completed?**, select **Yes, I have done it** and select **OK**:
 
     ![](Images/lab9/Ex2_task2_step2_1.png)
 
