@@ -81,7 +81,7 @@ The main tasks for this exercise are as follows:
 
     >**Note**: Make sure that you modify the settings of **az30307a-hv-vm-nic1**, which has the public IP address assigned to it.
 
-1. On the **Add inbound security rule** blade, specify the following settings (leave others with their default values) and select **Add**:
+1. On the **Add inbound security rule** blade, specify the following settings (**leave others with their default values**) and select **Add**:
 
     | Setting | Value | 
     | --- | --- |
