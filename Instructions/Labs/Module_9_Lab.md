@@ -268,7 +268,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex2_task1_step2.png)
 
-1. On the **IP addresses** tab of the **Create virtual network** blade, in the **IPv4 address space** text box, type **10.7.0.0/16** and select **+ Add subnet**.
+1. On the **IP addresses** tab of the **Create virtual network** blade, in the **IPv4 address space** text box, remove the existing ip-address and type **10.7.0.0/16** and select **+ Add subnet**.
 
 1. On the **Add subnet** blade, specify the following settings (leave others with their default values) and select **Add**:
 
