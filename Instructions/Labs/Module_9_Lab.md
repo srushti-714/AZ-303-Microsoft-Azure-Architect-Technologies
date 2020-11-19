@@ -47,7 +47,7 @@ The main tasks for this exercise are as follows:
 
 1. From your lab computer, start a web browser, navigate to the [Azure portal](https://portal.azure.com), and sign in by provided credentials , you can find it in the environment details tab.
 
-1. From your lab computer, open another browser tab, navigate to the [301-nested-vms-in-virtual-network Azure QuickStart template](https://github.com/Azure/azure-quickstart-templates/tree/master/301-nested-vms-in-virtual-network) or copy this link -> https://github.com/Azure/azure-quickstart-templates/tree/master/301-nested-vms-in-virtual-network and select **Deploy to Azure**. This will automatically redirect the browser to the **Hyper-V Host Virtual Machine with nested VMs** blade in the Azure portal.
+1. From your lab computer, open another browser tab in the same session where azure portal is logged in, then copy this link -> https://github.com/Azure/azure-quickstart-templates/tree/master/301-nested-vms-in-virtual-network , paste it in the new tab and select **Deploy to Azure**. This will automatically redirect the browser to the **Hyper-V Host Virtual Machine with nested VMs** blade in the Azure portal.
 
     ![](Images/lab9/new/ex0_task1_step2.png)
 
@@ -113,7 +113,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task2_step7_2_1.png)
 
-1. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, browse to [Windows Server Evaluations](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019) OR (https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019), and download the Windows Server 2019 **VHD** file and move the file from downloads to **F:\VHDs** folder. (Please follow the below images if any doubts)
+1. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, browse to this link https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019, and download the Windows Server 2019 **VHD** file and move the file from downloads to **F:\VHDs** folder. (Please follow the below images if any doubts)
 
     ![](Images/lab9/new/ex0_task2_step10_1.png)
     
