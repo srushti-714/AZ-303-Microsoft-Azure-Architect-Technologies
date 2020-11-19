@@ -388,7 +388,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/new/ex2_task2_step18.png)
 
-1. On the **Replication policy** blade, select **+ Create and Associate**. 
+1. On the **Replication policy** blade, select **Create new policy and associate**. 
 
     ![](Images/lab9/new/ex2_task2_step19.png)
 
