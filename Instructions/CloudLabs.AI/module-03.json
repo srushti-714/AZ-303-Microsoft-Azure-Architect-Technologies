@@ -1,0 +1,10 @@
+[ {
+  "Name": "Managing Azure Role-Based Access Control",
+  "Language": "English",
+  "Files": [
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AZ-303-Microsoft-Azure-Architect-Technologies/prod/Instructions/CloudLabs.AI/Module_10_Lab.md",
+      "Order": 1
+    }
+  ]
+} ]
