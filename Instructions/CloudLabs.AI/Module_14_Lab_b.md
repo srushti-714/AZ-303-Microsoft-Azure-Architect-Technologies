@@ -68,7 +68,9 @@ The main tasks for this exercise are as follows:
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**.
+    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show Advanced Settings**..
+
+ 1. **While selecting the resource group please select AZ30307C-LABRG-DEPLOYMENTID**.
 
 1. From the Cloud Shell pane, run the following to generate a pseudo-random string of characters that will be used as a prefix for names of resources you will provision in this exercise:
 
@@ -82,7 +84,8 @@ The main tasks for this exercise are as follows:
    export LOCATION='<Azure region>'
    ```
 
-1. From the Cloud Shell pane, run the following to create a resource group that will host all resources that you will provision in this lab:
+1. From the Cloud Shell pane, run the following to create a variable storing the value of resource group that will host all resources that you will provision in this lab:
+ `Note : Replace the Deployment-id with your deploymnet id given in environment detail page`
 
    ```sh
    export RESOURCE_GROUP_NAME='az30309a-labRG-Deployment-ID'
@@ -170,6 +173,7 @@ The main tasks for this exercise are as follows:
 1. If necessary, restart the Bash session in the Cloud Shell.
 
 1. From the Cloud Shell pane, run the following to repopulate variables that you used in the previous task:
+` Note : Replace the Deployment-id with your deployment id given in environment detail page`
 
    ```sh
    export RESOURCE_GROUP_NAME='az30309a-labRG-Deployment-ID'
@@ -195,11 +199,10 @@ The main tasks for this exercise are as follows:
 
 1. On the Azure Function app blade, select **Switch to classic experience \| Continue to classic experience**
 
-1. In the list of functions, click the name of your function.
 
 1. On the Azure Function app blade, select **Monitor** entry.
 
-1. Note a single event entry representing uploading of the blob. Select the entry to view the **Invocation Traces** details.
+1. Note a single event entry representing uploading of the blob. Select the entry to view the **Invocation Details** blade.
 
     > **Note**: Since the Azure function app in this exercise runs in the Consumption plan, there may be a delay of up to several minutes between uploading a blob and the function being triggered. It is possible to minimize the latency by implementing the Function app by using an App Service (rather than Consumption) plan.
 
@@ -233,7 +236,8 @@ The main tasks for this exercise are as follows:
    export PREFIX=$(echo `openssl rand -base64 5 | cut -c1-7 | tr '[:upper:]' '[:lower:]' | tr -cd '[[:alnum:]]._-'`)
    ```
 
-1. ` Note : Replace the Deployment-id with your deploymnet id given in environment detail page`
+1. From the Cloud Shell pane, run the following to identify the Azure region hosting the target resource group and its existing resources:
+`Note : Replace the Deployment-id with your deployment id given in environment detail page`
 
    ```sh
    export RESOURCE_GROUP_NAME_EXISTING='az30309a-labRG-Deployment-ID'

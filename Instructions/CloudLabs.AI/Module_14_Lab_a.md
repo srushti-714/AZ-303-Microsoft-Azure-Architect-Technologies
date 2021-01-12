@@ -84,7 +84,7 @@ None
 1. From the Cloud Shell pane, run the following to configure a deployment user:
 
    ```sh
-   USERNAME=az30305pass$RANDOM
+   USERNAME=az30305user$RANDOM
    PASSWORD=az30305pass$RANDOM
    az webapp deployment user set --user-name $USERNAME --password $PASSWORD 
    echo $USERNAME
@@ -95,6 +95,8 @@ None
     >**Note**: Make sure to record the value of the username and the corresponding password.
 
 1.  From the Cloud Shell pane, run the following to create variables storing the values of location and resource group which will be used to host the App Service web app (replace the `<location>` placeholder with the name of the Azure region that is available in your subscription and which is closest to the location of your lab computer):
+
+ > **Note**: Make sure you replace the value of Deployment-id. You can find value of Deployment-id the in the Environment Details tab
 
    ```sh
    LOCATION='<location>'
@@ -219,7 +221,7 @@ The main tasks for this exercise are as follows:
    ```
 
 1. From the Cloud Shell pane, run the following to retrieve the publishing URL of the newly created staging slot of the App Service web app:
->**Note**: Make sure you replace the value of Deployment-id. You can find value of Deployment-id the in the Environment Details tab
+> **Note**: Make sure you replace the value of Deployment-id. You can find value of Deployment-id the in the Environment Details tab
 
    ```sh
    RGNAME='az30305a-labRG-Deployment-id'

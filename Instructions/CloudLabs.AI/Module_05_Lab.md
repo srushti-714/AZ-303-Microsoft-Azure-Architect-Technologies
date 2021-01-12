@@ -1,7 +1,7 @@
 ---
 lab:
-    title: '01: Implementing Highly Available Azure IaaS Compute Architecture'
-    module: 'Module 01: Implement Load Balancing and Network Security'
+    title: '1: Implementing Highly Available Azure IaaS Compute Architecture'
+    module: 'Module 1: Implement Load Balancing and Network Security'
 ---
 
 # Lab: Implementing Highly Available Azure IaaS Compute Architecture
@@ -54,21 +54,21 @@ Estimated Time: 120 minutes
 
 ## Lab Files
 
--  \\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305suba.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01azuredeploy30301suba.json
 
--  \\AZ303\\AllFiles\\Labs\\05\\azuredeploy30301rga.json 
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rga.json
 
--  \\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rga.parameters.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rga.parameters.json
 
--  \\AZ303\\AllFiles\\Labs\\05\\azuredeploy30301rgb.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgb.json
 
--  \\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rgb.parameters.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgb.parameters.json
 
--  \\AZ303\\AllFiles\\Labs\\05\\azuredeploy30301rgc.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgc.json
 
--  \\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rgc.parameters.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgc.parameters.json
 
--  \\AZ303\\AllFiles\\Labs\\05\\az30305e-configure_VMSS_with_data_disk.ps1
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\az30301e-configure_VMSS_with_data_disk.ps1
 
 
 ## Instructions
@@ -97,35 +97,40 @@ ii. Select existing Resource Group as **az30301a-labRG-Deployment-id** and enter
     
 1. From the Cloud Shell pane, run the following to register the Microsoft.Insights resource provider in preparation for the later exercises in this lab:
 
+   ```Bash
    az provider register --namespace 'Microsoft.Insights'
    ```
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305suba.json** into the Cloud Shell home directory.
 
 1.From the Cloud Shell pane, run the following to create variables storing the values of location which will be used to host the resources(replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer): (**Note:- just go through the command, as the resource groups are pre-created**)
 
+   ```Bash
    LOCATION='<Azure region>'
    ```
    
+   ```Bash
    az deployment sub create \
+   --location $LOCATION \
    --template-file azuredeploy30305suba.json \
    ```
 
       > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30301rga.json **.
+1.  In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rga.json**.
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rga.parameters.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rga.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy an Azure Load Balancer Basic with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core into the same availability set:
 
+   ```Bash
    az deployment group create \
    --resource-group az30301a-labRG-Deployment-id \
    --template-file azuredeploy30301rga.json  \
    --parameters @azuredeploy30301rga.parameters.json
    ```
 
-    > **Note**: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
+    
+ > **Note**: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
 
 1. In the Azure portal, close the **Cloud Shell** pane. 
 
@@ -147,6 +152,7 @@ ii. Select existing Resource Group as **az30301a-labRG-Deployment-id** and enter
 1. On the **Network Watcher** blade, select **Effective security rules**.
 
 1. On the **Network Watcher \| Effective security rules** blade, specify the following settings:
+
  >**Note**: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
 
     | Setting | Value | 
@@ -158,7 +164,6 @@ ii. Select existing Resource Group as **az30301a-labRG-Deployment-id** and enter
 
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP.  
 
-    - the **az30301a-nic0** network interface blade.
     
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
 
@@ -184,7 +189,7 @@ ii. Select existing Resource Group as **az30301a-labRG-Deployment-id** and enter
 
     > **Note**: The latency should be about 1 millisecond, since both VMs are in the same availability set (within the same Azure datacenter).
 
-1. In the Azure portal, navigate to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-avset** availability set entry, and on the **az30301a-avset** blade, note the fault domain and update domain values assigned the two Azure VMs.
+1. In the Azure portal, navigate to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-avset** availability set entry, and on the **az30301a-avset** blade, note the fault domain and update domain values of the assigned Azure VMs.
 
 1. In the Azure portal, navigate back to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-lb** load balancer entry, and on the **az30301a-lb** blade, note the public IP address entry.
 
@@ -192,6 +197,7 @@ ii. Select existing Resource Group as **az30301a-labRG-Deployment-id** and enter
 
 1. From the Cloud Shell pane, run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
+   ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
@@ -203,6 +209,7 @@ ii. Select existing Resource Group as **az30301a-labRG-Deployment-id** and enter
 
 1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer without session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
+   ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
@@ -212,6 +219,7 @@ ii. Select existing Resource Group as **az30301a-labRG-Deployment-id** and enter
 
 1. From the Cloud Shell pane, run the following to test Remote Desktop connectivity via NAT to the first Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
+   ```Bash
    curl -v telnet://<lb_IP_address>:33890
    ```
 
@@ -219,6 +227,7 @@ ii. Select existing Resource Group as **az30301a-labRG-Deployment-id** and enter
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt and run the following to test Remote Desktop connectivity via NAT to the second Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
+   ```Bash
    curl -v telnet://<lb_IP_address>:33891
    ```
 
@@ -227,21 +236,6 @@ ii. Select existing Resource Group as **az30301a-labRG-Deployment-id** and enter
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt.
 
 
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   az group list --query "[?starts_with(name,'az30301a-')]".name --output tsv
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you used in this lab
-
-   ```sh
-   az group list --query "[?starts_with(name,'az30301a-')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-   ```
-
-1. Close the Cloud Shell pane.
 
 
 ### Exercise 2: Implement and analyze highly available Azure VM deployments using availability zones and Azure Load Balancer Standard
@@ -257,35 +251,36 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Deploy highly available Azure VMs into availability zones behind an Azure Load Balancer Standard by using Azure Resource Manager templates
 
-1. If needed, in the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
-1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305subb.json** into the Cloud Shell home directory.
 
-1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that is available in your subscription and which is closest to the location of your lab computer):
 
+   ```Bash
    LOCATION='<Azure region>'
    ```
    
+   ```Bash
    az deployment sub create \
+   --location $LOCATION \
    --template-file azuredeploy30305subb.json \
    --parameters rgName=az30301b-labRG-Deployment-id rgLocation=$LOCATION
    ```
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30301rgb.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgb.json**.
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rgb.parameters.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgb.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy an Azure Load Balancer Standard with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core across two availability zones:
 
+   ```Bash
    az deployment group create \
    --resource-group az30301b-labRG-Deployment-id \
    --template-file azuredeploy30301rgb.json \
    --parameters @azuredeploy30301rgb.parameters.json
    ```
 
-    > **Note**: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
+    
+ > **Note**: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
 
 1. In the Azure portal, close the Cloud Shell pane. 
 
@@ -309,6 +304,7 @@ The main tasks for this exercise are as follows:
 1. On the **Network Watcher** blade, select **Effective security rules**.
 
 1. On the **Network Watcher \| Effective security rules** blade, specify the following settings:
+
  >**Note**: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
 
     | Setting | Value | 
@@ -322,7 +318,6 @@ The main tasks for this exercise are as follows:
 
     > **Note**: This listing is also practically identical to the one you viewed in the previous exercise, with network-level protection implemented by using a network security group associated with the subnet to which both Azure VMs are connected. Keep in mind, however, that the network security group is, in this case, required for the HTTP and RDP traffic to reach the backend pool Azure VMs, due to the usage of the Azure Load Balancer Standard SKU (NSGs are optional when using the Basic SKU).  
     
-    - the **az30301a-nic0** network interface blade.
 
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
 
@@ -360,6 +355,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
+   ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
@@ -371,6 +367,7 @@ The main tasks for this exercise are as follows:
 
 1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer without session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
+   ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
@@ -380,6 +377,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to test Remote Desktop connectivity via NAT to the first Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
+   ```Bash
    curl -v telnet://<lb_IP_address>:33890
    ```
 
@@ -387,6 +385,7 @@ The main tasks for this exercise are as follows:
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt and run the following to test Remote Desktop connectivity via NAT to the second Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
+   ```Bash
    curl -v telnet://<lb_IP_address>:33891
    ```
 
@@ -429,22 +428,6 @@ The main tasks for this exercise are as follows:
 
 
 
-1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane. 
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   az group list --query "[?starts_with(name,'az30301b-')]".name --output tsv
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you used in this lab
-
-   az group list --query "[?starts_with(name,'az30301b-')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-   ```
-
-1. Close the Cloud Shell pane.
-
 
 ### Exercise 3: Implement and analyze highly available Azure VM Scale Set deployments using availability zones and Azure Application Gateway.
   
@@ -459,20 +442,18 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Deploy a highly available Azure VM Scale Set into availability zones behind an Azure Application Gateway by using Azure Resource Manager templates
 
-1. If needed, in the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305subc.json** into the Cloud Shell home directory.
 
-1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that is available in your subscription and which is closest to the location of your lab computer):
 
+   ```Bash
    az deployment sub create --location '<Azure region>' --template-file azuredeploy30305subc.json --parameters rgName=az30301c-labRG-Deployment-id rgLocation='<Azure region>'
    ```
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30301rgc.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgc.json**.
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rgc.parameters.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgc.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy an Azure Application Gateway with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core across different availability zones:
 
@@ -480,7 +461,8 @@ The main tasks for this exercise are as follows:
    az deployment group create --resource-group az30301c-labRG-Deployment-id --template-file azuredeploy30301rgc.json --parameters @azuredeploy30301rgc.parameters.json
    ```
 
-    > **Note**: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
+    
+ > **Note**: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
 
 1. In the Azure portal, close the Cloud Shell pane. 
 
@@ -521,6 +503,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to test load balancing of HTTP traffic to the Azure VM Scale Set instances in the backend pool of the Azure Application Gateway (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the gateway you identified earlier):
 
+   ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
@@ -609,6 +592,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to trigger autoscaling of the Azure VM Scale Set instances in the backend pool of the Azure Application Gateway (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the gateway you identified earlier):
 
+   ```Bash
    for (( ; ; )); do curl -s <lb_IP_address>?[1-10]; done
    ```
 1. In the Azure portal, on the **az30301c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway increased sufficiently to trigger scaling out.
@@ -674,7 +658,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: The disk attached in the previous step is a raw disks. Before it can be used, it is necessary to create a partition, format it, and mount it. To accomplish this, you will deploy a PowerShell script to Azure VM scale set instances via the Custom Script extension. First, however, you will need to remove it.
 
-1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30305c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
+1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
 
     > **Note**: Wait for uninstallation to complete.
 
@@ -693,11 +677,11 @@ The main tasks for this exercise are as follows:
 
 1. On the **scripts** blade, select **Upload**.
 
-1. On the **Upload blob** blade, select the folder icon, in the **Open** dialog box, navigate to the **\\\\AZ303\\AllFiles\\Labs\\05** folder, select **az30301e-configure_VMSS_with_data_disk.ps1**, select **Open**, and back on the **Upload blob** blade, select **Upload**. 
+1. On the **Upload blob** blade, select the folder icon, in the **Open** dialog box, navigate to the **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01** folder, select **az30301e-configure_VMSS_with_data_disk.ps1**, select **Open**, and back on the **Upload blob** blade, select **Upload**. 
 
 1. In the Azure portal, navigate back to the **az30301c-vmss** virtual machine scale set blade. 
 
-1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30305c-vmss \| Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
+1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
 
 1. On the **New resource** blade, select **Custom Script Extension** and then select **Create**.
 
@@ -712,17 +696,3 @@ The main tasks for this exercise are as follows:
     > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
 
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   az group list --query "[?starts_with(name,'az30305c-')]".name --output tsv
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you used in this lab
-
-   az group list --query "[?starts_with(name,'az30305c-')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-   ```
-   
-1. Close the Cloud Shell pane.
